@@ -14,7 +14,7 @@ export const hero_slides = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1591115765373-5207764f72e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
     title: "Embrace Latest I.T Technology",
     description:
       "Get dual-diplomas valued by employers globally. With 32+ years of Aptech expertise and NCC Education's 40-year UK presence, we offer internationally recognized qualifications.",
