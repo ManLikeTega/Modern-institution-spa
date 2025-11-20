@@ -1,8 +1,3 @@
-// Swiper Images
-import swiper_1 from "../assets/hero/swiper_1.png";
-import swiper_2 from "../assets/hero/swiper_2.png";
-import swiper_3 from "../assets/hero/swiper_3.png";
-
 import { GraduationCap, Globe, Users } from "lucide-react";
 
 export const hero_slides = [

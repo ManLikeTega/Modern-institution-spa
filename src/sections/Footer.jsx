@@ -1,22 +1,11 @@
 import { useState } from "react";
 import {
-  Phone,
-  Mail,
-  ChevronRight,
-  Laptop,
-  Network,
-  Database,
-  Cloud,
-  Smartphone,
-  Send,
-  Star,
-  CheckCircle2,
-  Twitter,
-  Facebook,
-  Instagram,
-  Linkedin,
-  MapPin,
-} from "lucide-react";
+  quickLinks,
+  programs,
+  socialLinks,
+  contactInfo,
+} from "../data/footer_links";
+import { Mail, ChevronRight, Send, CheckCircle2 } from "lucide-react";
 import Logo from "../components/logo";
 
 function Footer() {
@@ -36,76 +25,6 @@ function Footer() {
 
   const currentYear = new Date().getFullYear();
 
-  const quickLinks = [
-    { name: "FAQs", href: "/" },
-    { name: "Course Offer", href: "/" },
-    { name: "About Us", href: "/" },
-    { name: "Blog", href: "/" },
-    { name: "Contact Us", href: "/" },
-  ];
-
-  const programs = [
-    { name: "Software Engineering", icon: Laptop, color: "text-third" },
-    { name: "Network Security", icon: Network, color: "text-third" },
-    { name: "Data Science", icon: Database, color: "text-third" },
-    { name: "Cloud Computing", icon: Cloud, color: "text-third" },
-    { name: "Mobile Development", icon: Smartphone, color: "text-third" },
-  ];
-
-  const socialLinks = [
-    {
-      name: "Twitter",
-      href: "https://twitter.com/aceajahcentre",
-      icon: Twitter,
-      ariaLabel: "Follow us on Twitter",
-    },
-    {
-      name: "Facebook",
-      href: "https://www.facebook.com/OfficialAptechAjahCentre/",
-      icon: Facebook,
-      ariaLabel: "Like us on Facebook",
-    },
-    {
-      name: "Instagram",
-      href: "https://www.instagram.com/aptech_ajah",
-      icon: Instagram,
-      ariaLabel: "Follow us on Instagram",
-    },
-    {
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/company/aptechajahcentre/",
-      icon: Linkedin,
-      ariaLabel: "Connect with us on LinkedIn",
-    },
-  ];
-
-  const contactInfo = [
-    {
-      icon: Phone,
-      href: "tel:+2348141554165",
-      label: "Call us at +234 814 1554 165",
-      text: "+234 814 1554 165",
-      bgColor: "bg-blue-600",
-      hoverBgColor: "bg-blue-700",
-    },
-    {
-      icon: Mail,
-      href: "mailto:aptchajahcentre@gmail.com",
-      label: "Email us at aptechajahcentre@gmail.com",
-      text: "aptechajahcentre@gmail.com",
-      bgColor: "bg-green-600",
-      hoverBgColor: "bg-green-700",
-    },
-    {
-      icon: MapPin,
-      href: "#",
-      label: "Visit our location",
-      text: "Ajah, Lagos, Nigeria",
-      bgColor: "bg-purple-600",
-      hoverBgColor: "bg-purple-700",
-    },
-  ];
-
   return (
     <footer className="w-full bg-primary text-white" role="contentinfo">
       {/* Main Footer Content */}
@@ -113,7 +32,7 @@ function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <Logo className="" />
+            <Logo />
 
             <p className="text-white mb-6">
               Pursue an international degree in Information Technology with
