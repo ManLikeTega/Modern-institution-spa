@@ -14,11 +14,11 @@ import {
 } from "lucide-react";
 
 export const quickLinks = [
-  { name: "FAQs", href: "/" },
-  { name: "Course Offer", href: "/" },
-  { name: "About Us", href: "/" },
-  { name: "Blog", href: "/" },
-  { name: "Contact Us", href: "/" },
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
+  { name: "Course", href: "/courses" },
+  { name: "ADSE", href: "/" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export const programs = [

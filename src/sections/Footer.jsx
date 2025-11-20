@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import {
   quickLinks,
   programs,
@@ -70,13 +71,13 @@ function Footer() {
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
                     >
                       <ChevronRight className="w-3 h-3 text-red-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

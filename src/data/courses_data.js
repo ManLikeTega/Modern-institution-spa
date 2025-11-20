@@ -224,38 +224,120 @@ export const categoryData = {
       "Complete career transformation programs designed to take you from beginner to job-ready professional.",
     heroImage:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
-    layout: "standard", // Standard layout for career
-    courses: [
+    layout: "detailed", // Changed to match professional layout
+    sections: [
       {
-        id: 1,
-        title: "Full Stack Web Development",
-        duration: "24 weeks",
-        students: "62 students",
-        level: "Beginner to Advanced",
-        rating: 4.9,
-        description:
-          "Complete full-stack development program covering frontend, backend, and deployment.",
-        features: [
-          "HTML/CSS/JS",
-          "React/Node.js",
-          "Database Design",
-          "Portfolio Projects",
+        title: "Software Development Career Tracks",
+        courses: [
+          {
+            id: 1,
+            title: "Full Stack Web Development",
+            icon: "🌐",
+            description:
+              "Complete full-stack development program covering frontend, backend, and deployment. Become job-ready with hands-on projects and modern technologies.",
+            features: [
+              "HTML5/CSS3/JavaScript",
+              "React & Node.js",
+              "Database Design & Management",
+              "RESTful APIs & Microservices",
+              "DevOps & Deployment",
+            ],
+            duration: "24 weeks",
+            students: "62 students",
+            level: "Beginner to Advanced",
+            rating: 4.9,
+          },
+          {
+            id: 2,
+            title: "Software Engineering Career Track",
+            icon: "💻",
+            description:
+              "Comprehensive software engineering program with focus on industry best practices, system design, and real-world project experience.",
+            features: [
+              "Java & Python Programming",
+              "System Design & Architecture",
+              "Agile Methodology & Scrum",
+              "Testing & Quality Assurance",
+              "Technical Interview Preparation",
+            ],
+            duration: "36 weeks",
+            students: "55 students",
+            level: "Beginner to Advanced",
+            rating: 4.9,
+          },
         ],
       },
       {
-        id: 2,
-        title: "Software Engineering Career Track",
-        duration: "36 weeks",
-        students: "55 students",
-        level: "Beginner to Advanced",
-        rating: 4.9,
-        description:
-          "Comprehensive software engineering program with focus on industry best practices.",
-        features: [
-          "Java/Python",
-          "System Design",
-          "Agile Methodology",
-          "Interview Prep",
+        title: "Specialized Career Programs",
+        courses: [
+          {
+            id: 3,
+            title: "Data Science Career Program",
+            icon: "📊",
+            description:
+              "Master data science from fundamentals to advanced machine learning. Build a portfolio of real-world data projects.",
+            features: [
+              "Python for Data Science",
+              "Machine Learning & AI",
+              "Data Visualization",
+              "Statistical Analysis",
+              "Big Data Technologies",
+            ],
+            duration: "28 weeks",
+            students: "48 students",
+            level: "Intermediate to Advanced",
+            rating: 4.8,
+          },
+          {
+            id: 4,
+            title: "Mobile App Development",
+            icon: "📱",
+            description:
+              "Learn to build cross-platform mobile applications using Flutter and React Native. Create professional apps for iOS and Android.",
+            features: [
+              "Flutter & Dart",
+              "React Native",
+              "Mobile UI/UX Design",
+              "API Integration",
+              "App Store Deployment",
+            ],
+            duration: "20 weeks",
+            students: "71 students",
+            level: "Beginner to Intermediate",
+            rating: 4.7,
+          },
+        ],
+      },
+    ],
+    additionalSections: [
+      {
+        title: "Career Support Services",
+        items: [
+          "1-on-1 Career Coaching",
+          "Resume & Portfolio Review",
+          "Technical Interview Preparation",
+          "Job Placement Assistance",
+          "Industry Networking Events",
+        ],
+      },
+      {
+        title: "Program Features",
+        items: [
+          "Hands-on Project Experience",
+          "Mentorship from Industry Experts",
+          "Flexible Learning Schedule",
+          "Certificate of Completion",
+          "Lifetime Career Support",
+        ],
+      },
+      {
+        title: "Career Outcomes",
+        items: [
+          "Full-Stack Developer",
+          "Software Engineer",
+          "Data Scientist",
+          "Mobile App Developer",
+          "DevOps Engineer",
         ],
       },
     ],

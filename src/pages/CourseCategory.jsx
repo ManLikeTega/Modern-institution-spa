@@ -1,4 +1,3 @@
-// pages/CourseCategory.js
 import { categoryData } from "../data/courses_data";
 import { useParams, Link } from "react-router";
 import { ArrowLeft, Clock, Users, Star, CheckCircle } from "lucide-react";
@@ -18,9 +17,9 @@ const CourseCategory = () => {
         return renderProfessionalLayout();
       case "corporate":
         return renderCorporateLayout();
-      case "standard":
+      case "carreer":
       default:
-        return renderStandardLayout();
+        return renderCarreerLayout();
     }
   };
 
@@ -151,7 +150,7 @@ const CourseCategory = () => {
     </div>
   );
 
-  const renderStandardLayout = () => (
+  const renderCarreerLayout = () => (
     <div className="max-w-7xl mx-auto px-6 py-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {data.courses?.map((course) => (
@@ -251,9 +250,12 @@ const CourseCategory = () => {
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 {data.description}
               </p>
-              <button className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
-                Apply Now!
-              </button>
+
+              <Link to="/contact">
+                <button className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                  Apply Now!
+                </button>
+              </Link>
             </div>
           </div>
         </div>

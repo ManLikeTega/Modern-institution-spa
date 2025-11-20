@@ -1,30 +1,69 @@
 import { Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { courses } from "../data/home_data";
 import Logo from "./Logo";
 
-const Navbar = ({ isHome = false }) => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
   const [bg, setBg] = useState("lg:bg-transparent lg:border-b-0");
   const [nav_btn, setNav_btn] = useState("");
   const location = useLocation();
+  const [navbarVisible, setNavbarVisible] = useState(true);
 
   // Scroll effect
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setBg("lg:bg-primary lg:border-b-1");
-        setNav_btn(
-          "from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 text-white before:hidden rounded-lg text-sm sm:text-base md:text-lg"
-        );
-      } else {
-        setBg("lg:bg-transparent lg:border-b-0");
-        setNav_btn("");
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const scrollDirection = currentScrollY > lastScrollY ? "down" : "up";
+
+          // Get footer element and its position
+          const footer = document.querySelector("footer");
+          const footerTop = footer
+            ? footer.offsetTop
+            : document.body.scrollHeight;
+
+          // Calculate when to start hiding navbar (e.g., 100px before footer)
+          const hideThreshold = footerTop - window.innerHeight + 400;
+
+          // Scroll behavior for top of page
+          if (currentScrollY > 20) {
+            setBg("lg:bg-primary lg:border-b-1");
+            setNav_btn(
+              "from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 text-white before:hidden rounded-lg text-sm sm:text-base md:text-lg"
+            );
+          } else {
+            setBg("lg:bg-transparent lg:border-b-0");
+            setNav_btn("");
+          }
+
+          // Hide navbar when approaching footer and scrolling down
+          if (currentScrollY > hideThreshold && scrollDirection === "down") {
+            setNavbarVisible(false);
+          }
+          // Show navbar when scrolling up OR when not near footer
+          else if (
+            scrollDirection === "up" ||
+            currentScrollY <= hideThreshold
+          ) {
+            setNavbarVisible(true);
+          }
+
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -41,14 +80,14 @@ const Navbar = ({ isHome = false }) => {
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
+  const isHome = location.pathname === "/";
   const isCoursesPage = location.pathname.includes("/course");
   const isAboutPage = location.pathname === "/about";
 
-  const courseCategories = [
-    { name: "Web Development", path: "/course/web-development" },
-    { name: "Data Science", path: "/course/data-science" },
-    { name: "AI & Machine Learning", path: "/course/ai-ml" },
-  ];
+  const courseCategories = courses.map((course) => ({
+    name: course.title,
+    path: course.link,
+  }));
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -67,45 +106,62 @@ const Navbar = ({ isHome = false }) => {
       className={`${
         isHome
           ? `${bg}  text-white sticky lg:fixed`
-          : "bg-white text-black sticky"
+          : "bg-white text-black  sticky"
+      } ${
+        navbarVisible ? "translate-y-0" : "-translate-y-full"
       } bg-primary border-b border-secondary  p-3 lg:py-3 lg:px-13  w-full top-0 z-50`}
     >
       <div>
         <div className="flex justify-between items-center">
           <div className="nav-logo cursor-pointer h-10 w-34">
-            <Link to="/">
+            {isHome ? (
               <Logo className="logo object-cover" />
-            </Link>
+            ) : (
+              <Link to="/">
+                <Logo className="logo object-cover" />
+              </Link>
+            )}
           </div>
 
           <div className="nav_menu hidden lg:flex gap-5 lg:items-center">
-            {/* About Us Link - Only navigates if not already on about page */}
-            {isAboutPage ? (
-              <span className="nav_link cursor-default opacity-70">
-                about us
+            {isHome ? (
+              <span className="nav_link cursor-default before:w-full ">
+                home
               </span>
             ) : (
               <Link
-                to="/about"
+                to="/"
                 className={`${
                   isHome
                     ? `before:block`
                     : "before:hidden hover:text-secondary transition"
                 } nav_link`}
               >
+                home
+              </Link>
+            )}
+
+            {isAboutPage ? (
+              <span className="nav_link cursor-default before:w-full text-secondary">
+                about us
+              </span>
+            ) : (
+              <Link
+                to="/about"
+                className={`${
+                  isHome ? `before:block` : "before:hidden"
+                } nav_link`}
+              >
                 about us
               </Link>
             )}
 
-            {/* Courses Link - Becomes dropdown on courses pages */}
             {isCoursesPage ? (
-              <div className="relative courses-dropdown">
+              <div className="relative courses-dropdown text-secondary">
                 <button
                   onClick={() => setIsCoursesOpen(!isCoursesOpen)}
                   className={`${
-                    isHome
-                      ? `before:block`
-                      : "before:hidden hover:text-secondary transition"
+                    isHome ? `before:block` : "before:hidden "
                   } nav_link flex items-center gap-1`}
                 >
                   courses
@@ -122,7 +178,7 @@ const Navbar = ({ isHome = false }) => {
                       <Link
                         key={category.path}
                         to={category.path}
-                        className="block px-4 py-2 hover:bg-gray-100 transition-colors"
+                        className="block px-4 py-2 hover:bg-secondary/30 transition-colors"
                         onClick={() => setIsCoursesOpen(false)}
                       >
                         {category.name}
@@ -133,7 +189,7 @@ const Navbar = ({ isHome = false }) => {
               </div>
             ) : (
               <Link
-                to="/course"
+                to="/courses"
                 className={`${
                   isHome
                     ? `before:block`
@@ -215,7 +271,7 @@ const Navbar = ({ isHome = false }) => {
                 </>
               ) : (
                 <li className="capitalize">
-                  <Link to="/course" onClick={() => setIsMenuOpen(false)}>
+                  <Link to="/courses" onClick={() => setIsMenuOpen(false)}>
                     courses
                   </Link>
                 </li>

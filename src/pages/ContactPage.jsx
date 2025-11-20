@@ -1,10 +1,10 @@
 import ContactForm from "../sections/ContactForm";
-
 import bannerImage from "../assets/contact-banner.jpg";
 import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
+import Footer from "../sections/Footer";
 
 function ContactPage() {
   return (
@@ -33,6 +33,7 @@ function ContactPage() {
       </Banner>
 
       <ContactForm />
+      <Footer />
     </div>
   );
 }

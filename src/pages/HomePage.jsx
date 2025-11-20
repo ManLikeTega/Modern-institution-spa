@@ -11,7 +11,7 @@ function HomePage() {
   return (
     <>
       <main className="min-h-screen">
-        <Navbar isHome={true} />
+        <Navbar />
         <Hero />
         <PopularCourses />
         <Service />

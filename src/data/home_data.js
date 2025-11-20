@@ -71,7 +71,7 @@ export const courses = [
   },
   {
     title: "CAREER COURSES",
-    link: "/course",
+    link: "/courses/career",
     description: "Comprehensive programs for building successful IT careers",
   },
 ];
