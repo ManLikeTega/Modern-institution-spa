@@ -10,6 +10,7 @@ const Navbar = ({ isHome = false }) => {
   const [nav_btn, setNav_btn] = useState("");
   const location = useLocation();
 
+  // Scroll effect
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -30,9 +31,14 @@ const Navbar = ({ isHome = false }) => {
     };
   }, []);
 
-  // Close courses dropdown when route changes
+  // Close dropdowns when route changes - using setTimeout to avoid synchronous state update
   useEffect(() => {
-    setIsCoursesOpen(false);
+    const timer = setTimeout(() => {
+      setIsCoursesOpen(false);
+      setIsMenuOpen(false);
+    }, 0);
+
+    return () => clearTimeout(timer);
   }, [location.pathname]);
 
   const isCoursesPage = location.pathname.includes("/course");
@@ -43,6 +49,18 @@ const Navbar = ({ isHome = false }) => {
     { name: "Data Science", path: "/course/data-science" },
     { name: "AI & Machine Learning", path: "/course/ai-ml" },
   ];
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isCoursesOpen && !event.target.closest(".courses-dropdown")) {
+        setIsCoursesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isCoursesOpen]);
 
   return (
     <nav
@@ -81,7 +99,7 @@ const Navbar = ({ isHome = false }) => {
 
             {/* Courses Link - Becomes dropdown on courses pages */}
             {isCoursesPage ? (
-              <div className="relative">
+              <div className="relative courses-dropdown">
                 <button
                   onClick={() => setIsCoursesOpen(!isCoursesOpen)}
                   className={`${
