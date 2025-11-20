@@ -6,7 +6,7 @@ import {
   contactInfo,
 } from "../data/footer_links";
 import { Mail, ChevronRight, Send, CheckCircle2 } from "lucide-react";
-import Logo from "../components/logo";
+import Logo from "../components/Logo";
 
 function Footer() {
   const [email, setEmail] = useState("");

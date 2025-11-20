@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import Logo from "./logo";
+import Logo from "./Logo";
 
 const Navbar = ({ isHome = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
