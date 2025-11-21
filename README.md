@@ -1,6 +1,5 @@
 # Modern Institution SPA
 
-::: {align="center"}
 ![Last
 Commit](https://img.shields.io/github/last-commit/ManLikeTega/Modern-institution-spa?style=flat&logo=git&logoColor=white&color=0080ff)
 ![Top
@@ -25,7 +24,6 @@ Form](https://img.shields.io/badge/React%20Hook%20Form-EC5990.svg?style=flat&log
 ![YAML](https://img.shields.io/badge/YAML-CB171E.svg?style=flat&logo=YAML&logoColor=white)
 ![React
 Router](https://img.shields.io/badge/React%20Router-CA4245.svg?style=flat&logo=React-Router&logoColor=white)
-:::
 
 ## 📖 Overview
 
@@ -107,9 +105,3 @@ Run the test suite with:
 ```bash
 npm test
 ```
-
----
-
-::: {align="center"}
-`<a href="#top">`{=html}⬆ Return to Top`</a>`{=html}
-:::
