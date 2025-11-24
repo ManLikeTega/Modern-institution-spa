@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { Award, Users, Star, Briefcase, Handshake } from "lucide-react";
+import { Award } from "lucide-react";
+import { progressStats } from "../data/home_data";
+import Badge from "../components/Badge";
 
 function Progress() {
   const [counted, setCounted] = useState(false);
@@ -14,45 +16,6 @@ function Progress() {
       setCounted(true);
     }
   }, [inView, counted]);
-
-  const stats = [
-    {
-      value: 1000,
-      suffix: "+",
-      label: "Students Trained",
-      icon: Users,
-      color: "text-white",
-      bgColor: "bg-red-800/80",
-      duration: 2000,
-    },
-    {
-      value: 4.9,
-      suffix: "/5",
-      label: "Average Rating",
-      icon: Star,
-      color: "text-yellow-300",
-      bgColor: "bg-red-800/80",
-      duration: 1500,
-    },
-    {
-      value: 95,
-      suffix: "%",
-      label: "Employment Rate",
-      icon: Briefcase,
-      color: "text-white",
-      bgColor: "bg-red-800/80",
-      duration: 1800,
-    },
-    {
-      value: 50,
-      suffix: "+",
-      label: "Industry Partners",
-      icon: Handshake,
-      color: "text-white",
-      bgColor: "bg-red-800/80",
-      duration: 1200,
-    },
-  ];
 
   const Counter = ({ value, suffix, duration }) => {
     const [count, setCount] = useState(0);
@@ -89,24 +52,22 @@ function Progress() {
       <div className="absolute inset-0 bg-linear-to-br from-primary to-[#8a1a1f] opacity-90"></div>
 
       <div className="relative z-10">
-        {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-4 backdrop-blur-sm">
-            <Award className="w-4 h-4" />
+          <Badge Icon={Award} className="bg-white/20 text-white ">
             Trusted by Thousands
-          </div>
+          </Badge>
 
           <h2 className="section_title text-white">Our Impact in Numbers</h2>
 
-          <p className="text-xl text-red-100 max-w-2xl mx-auto">
+          <p className=" text-white">
             Decades of excellence in IT education, transforming lives and
             careers through quality training and industry partnerships.
           </p>
         </div>
 
-        {/* Stats Grid */}
+        {/* progressStats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((stat, index) => {
+          {progressStats.map((stat, index) => {
             const IconComponent = stat.icon;
             return (
               <div key={index} className="text-center group">

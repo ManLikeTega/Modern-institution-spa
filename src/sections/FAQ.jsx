@@ -42,7 +42,9 @@ function FAQ() {
                     </div>
                     {activeFaq === index && (
                       <div className="px-5 md:px-6 pb-5 md:pb-6">
-                        <p className="text-neutral-600">{faq.answer}</p>
+                        <p className="text-neutral-600 text-base">
+                          {faq.answer}
+                        </p>
                       </div>
                     )}
                   </li>

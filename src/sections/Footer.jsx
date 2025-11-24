@@ -27,15 +27,15 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-primary text-white" role="contentinfo">
+    <footer className="w-full bg-primary text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="section">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <Logo />
 
-            <p className="text-white mb-6">
+            <p className="mb-6">
               Pursue an international degree in Information Technology with
               world-class education and industry-relevant curriculum.
             </p>
@@ -64,9 +64,8 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 relative pb-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-12 before:h-0.5 before:bg-third before:mt-2">
-              Quick Links
-            </h3>
+            <h3 className="footer_header">Quick Links</h3>
+
             <nav aria-label="Quick links">
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
@@ -86,9 +85,8 @@ function Footer() {
 
           {/* Programs */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 relative pb-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-12 before:h-0.5 before:bg-third before:mt-2">
-              Our Programs
-            </h3>
+            <h3 className="footer_header">Our Programs</h3>
+
             <ul className="space-y-3 text-white">
               {programs.map((program, index) => {
                 const IconComponent = program.icon;
@@ -104,10 +102,9 @@ function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 relative pb-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-12 before:h-0.5 before:bg-third before:mt-2">
-              Newsletter
-            </h3>
-            <p className="text-white mb-6">
+            <h3 className="footer_header">Newsletter</h3>
+
+            <p className="mb-6">
               Stay updated with our latest courses, events, and IT industry
               insights.
             </p>

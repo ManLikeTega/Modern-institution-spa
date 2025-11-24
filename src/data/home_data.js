@@ -1,4 +1,18 @@
-import { GraduationCap, Globe, Users } from "lucide-react";
+import {
+  GraduationCap,
+  Globe,
+  Users,
+  Star,
+  Briefcase,
+  Handshake,
+} from "lucide-react";
+
+import Partner1 from "../assets/partners/partner_1.png";
+import Partner2 from "../assets/partners/partner_2.png";
+import Partner3 from "../assets/partners/partner_3.png";
+import Partner4 from "../assets/partners/partner_4.png";
+import Partner5 from "../assets/partners/partner_5.png";
+import Partner6 from "../assets/partners/partner_6.png";
 
 export const hero_slides = [
   {
@@ -36,6 +50,54 @@ export const hero_slides = [
   },
 ];
 
+export const popularCourses = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1737396091040-4d3c49d9c4e7?q=80&w=1887&auto=format&fit=crop",
+    title: "Artificial Intelligence",
+    description:
+      "Understand the concepts of machine learning, deep learning, and how AI is transforming industries.",
+    rating: 4.9,
+    students: 1247,
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1639472628910-ef02c5404b9c?q=80&w=1770&auto=format&fit=crop",
+    title: "Data Science",
+    description:
+      "Learn how to extract insights from data using Python, R, and statistical models.",
+    rating: 4.8,
+    students: 987,
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1740042501963-7d064df65a3f?q=80&w=1770&auto=format&fit=crop",
+    title: "Building Modern Websites",
+    description:
+      "Master HTML, CSS, JavaScript and modern tools to build stunning websites.",
+    rating: 4.7,
+    students: 1563,
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1646300291345-e7f3f97986ed?q=80&w=1834&auto=format&fit=crop",
+    title: "Web Development",
+    description:
+      "From front-end to back-end, learn full-stack development with real-world projects.",
+    rating: 4.9,
+    students: 2034,
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1583225358814-4094d1a8aef2?q=80&w=1770&auto=format&fit=crop",
+    title: "ReactJS for Responsive Web",
+    description:
+      "Build powerful single-page apps and interactive UI with ReactJS.",
+    rating: 4.8,
+    students: 1789,
+  },
+];
+
 export const services = [
   {
     icon: GraduationCap,
@@ -57,6 +119,45 @@ export const services = [
   },
 ];
 
+export const progressStats = [
+  {
+    value: 1000,
+    suffix: "+",
+    label: "Students Trained",
+    icon: Users,
+    color: "text-white",
+    bgColor: "bg-red-800/80",
+    duration: 2000,
+  },
+  {
+    value: 4.9,
+    suffix: "/5",
+    label: "Average Rating",
+    icon: Star,
+    color: "text-yellow-300",
+    bgColor: "bg-red-800/80",
+    duration: 1500,
+  },
+  {
+    value: 95,
+    suffix: "%",
+    label: "Employment Rate",
+    icon: Briefcase,
+    color: "text-white",
+    bgColor: "bg-red-800/80",
+    duration: 1800,
+  },
+  {
+    value: 50,
+    suffix: "+",
+    label: "Industry Partners",
+    icon: Handshake,
+    color: "text-white",
+    bgColor: "bg-red-800/80",
+    duration: 1200,
+  },
+];
+
 export const courses = [
   {
     title: "CORPORATE TRAINING",
@@ -73,6 +174,39 @@ export const courses = [
     title: "CAREER COURSES",
     link: "/courses/career",
     description: "Comprehensive programs for building successful IT careers",
+  },
+];
+
+export const partners = [
+  {
+    id: 1,
+    image: Partner1,
+    label: "codecamp",
+  },
+  {
+    id: 2,
+    image: Partner2,
+    label: "Lincoln University College",
+  },
+  {
+    id: 3,
+    image: Partner3,
+    label: "Middlesex University",
+  },
+  {
+    id: 4,
+    image: Partner4,
+    label: "ofqual",
+  },
+  {
+    id: 5,
+    image: Partner5,
+    label: "uclan",
+  },
+  {
+    id: 6,
+    image: Partner6,
+    label: "NCC Education",
   },
 ];
 

@@ -16,8 +16,8 @@ import {
 export const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Course", href: "/courses" },
-  { name: "ADSE", href: "/" },
+  { name: "Courses", href: "/courses" },
+  { name: "Gallery", href: "/" },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -38,7 +38,7 @@ export const socialLinks = [
   },
   {
     name: "Facebook",
-    href: "https://www.facebook.com/OfficialAptechAjahCentre/",
+    href: "https://web.facebook.com/profile.php?id=100083300764625",
     icon: Facebook,
     ariaLabel: "Like us on Facebook",
   },
@@ -50,7 +50,7 @@ export const socialLinks = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/company/aptechajahcentre/",
+    href: "https://www.linkedin.com/company/aptech-fowobi-ota/",
     icon: Linkedin,
     ariaLabel: "Connect with us on LinkedIn",
   },
@@ -59,17 +59,17 @@ export const socialLinks = [
 export const contactInfo = [
   {
     icon: Phone,
-    href: "tel:+2348141554165",
-    label: "Call us at +234 814 1554 165",
-    text: "+234 814 1554 165",
+    href: "tel:+2349063571320",
+    label: "Call us at +234 906 357 1320",
+    text: "+234 906 357 1320",
     bgColor: "bg-blue-600",
     hoverBgColor: "bg-blue-700",
   },
   {
     icon: Mail,
-    href: "mailto:aptchajahcentre@gmail.com",
-    label: "Email us at aptechajahcentre@gmail.com",
-    text: "aptechajahcentre@gmail.com",
+    href: "mailto:aptechfowobiota@gmail.com",
+    label: "Email us at aptechfowobiota@gmail.com",
+    text: "aptechfowobiota@gmail.com",
     bgColor: "bg-green-600",
     hoverBgColor: "bg-green-700",
   },
@@ -77,7 +77,7 @@ export const contactInfo = [
     icon: MapPin,
     href: "#",
     label: "Visit our location",
-    text: "Ajah, Lagos, Nigeria",
+    text: "Fowobi, Ota, Nigeria",
     bgColor: "bg-purple-600",
     hoverBgColor: "bg-purple-700",
   },

@@ -5,7 +5,7 @@ import Banner from "../components/Banner";
 import CoursesCategory from "../sections/CoursesCategory";
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import FAQ from "../components/FAQ";
+import FAQ from "../sections/FAQ";
 
 import bannerImage from "../assets/courses-banner.jpg";
 

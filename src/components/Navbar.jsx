@@ -7,6 +7,7 @@ import Logo from "./Logo";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
+  const [isADSEOpen, setIsADSEOpen] = useState(false);
   const [bg, setBg] = useState("lg:bg-transparent lg:border-b-0");
   const [nav_btn, setNav_btn] = useState("");
   const location = useLocation();
@@ -70,36 +71,48 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close dropdowns when route changes - using setTimeout to avoid synchronous state update
+  // Close dropdowns when route changes
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsCoursesOpen(false);
+      setIsADSEOpen(false);
       setIsMenuOpen(false);
     }, 0);
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isCoursesOpen && !event.target.closest(".courses-dropdown")) {
+        setIsCoursesOpen(false);
+      }
+      if (isADSEOpen && !event.target.closest(".adse-dropdown")) {
+        setIsADSEOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isCoursesOpen, isADSEOpen]);
+
   const isHome = location.pathname === "/";
   const isCoursesPage = location.pathname.includes("/course");
   const isAboutPage = location.pathname === "/about";
+  const isADSEPage = location.pathname.includes("/adse");
 
   const courseCategories = courses.map((course) => ({
     name: course.title,
     path: course.link,
   }));
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isCoursesOpen && !event.target.closest(".courses-dropdown")) {
-        setIsCoursesOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isCoursesOpen]);
+  const ADSEDropdownItems = [
+    { name: "ADSE Overview", href: "/adse/overview" },
+    { name: "Curriculum", href: "/adse/curriculum" },
+    { name: "Career Paths", href: "/adse/careers" },
+    { name: "Admission Requirements", href: "/adse/admission" },
+  ];
 
   return (
     <nav
@@ -156,6 +169,7 @@ const Navbar = () => {
               </Link>
             )}
 
+            {/* Courses Dropdown */}
             {isCoursesPage ? (
               <div className="relative courses-dropdown text-secondary">
                 <button
@@ -173,7 +187,7 @@ const Navbar = () => {
                 </button>
 
                 {isCoursesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg border border-gray-200 py-2">
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                     {courseCategories.map((category) => (
                       <Link
                         key={category.path}
@@ -200,6 +214,73 @@ const Navbar = () => {
               </Link>
             )}
 
+            {/* ADSE Dropdown */}
+            {isADSEPage ? (
+              <div className="relative adse-dropdown text-secondary">
+                <button
+                  onClick={() => setIsADSEOpen(!isADSEOpen)}
+                  className={`${
+                    isHome ? `before:block` : "before:hidden "
+                  } nav_link flex items-center gap-1`}
+                >
+                  ADSE
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${
+                      isADSEOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {isADSEOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-white text-black rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                    {ADSEDropdownItems.map((item, index) => (
+                      <Link
+                        key={index}
+                        to={item.href}
+                        className="block px-4 py-2 hover:bg-secondary/30 transition-colors"
+                        onClick={() => setIsADSEOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="relative adse-dropdown">
+                <button
+                  onClick={() => setIsADSEOpen(!isADSEOpen)}
+                  className={`${
+                    isHome
+                      ? `before:block`
+                      : "before:hidden hover:text-secondary transition"
+                  } nav_link flex items-center gap-1`}
+                >
+                  ADSE
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${
+                      isADSEOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {isADSEOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-56 bg-white text-black rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                    {ADSEDropdownItems.map((item, index) => (
+                      <Link
+                        key={index}
+                        to={item.href}
+                        className="block px-4 py-2 hover:bg-secondary/30 transition-colors"
+                        onClick={() => setIsADSEOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             <Link
               className={`${
                 isHome
@@ -207,16 +288,7 @@ const Navbar = () => {
                   : "before:hidden hover:text-secondary transition"
               } nav_link`}
             >
-              ADSE
-            </Link>
-            <Link
-              className={`${
-                isHome
-                  ? `before:block`
-                  : "before:hidden hover:text-secondary transition"
-              } nav_link`}
-            >
-              Testimonials
+              Gallery
             </Link>
             <Link
               to="/contact"
@@ -277,11 +349,31 @@ const Navbar = () => {
                 </li>
               )}
 
+              {/* Mobile ADSE */}
+              {isADSEPage ? (
+                <>
+                  <li className="capitalize font-semibold">ADSE</li>
+                  {ADSEDropdownItems.map((item, index) => (
+                    <li key={index} className="capitalize pl-4">
+                      <Link to={item.href} onClick={() => setIsMenuOpen(false)}>
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </>
+              ) : (
+                <li className="capitalize">
+                  <Link
+                    to="/adse/overview"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    ADSE
+                  </Link>
+                </li>
+              )}
+
               <li className="capitalize">
-                <a href="#">ADSE</a>
-              </li>
-              <li className="capitalize">
-                <a href="#">testimonials</a>
+                <a href="#">Gallery</a>
               </li>
               <li className="capitalize">
                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>

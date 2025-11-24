@@ -5,7 +5,7 @@ import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
 import Footer from "../sections/Footer";
 
-const CourseCategory = () => {
+const CourseCategoryPage = () => {
   const { category } = useParams();
 
   const data = categoryData[category] || categoryData.professional;
@@ -269,4 +269,4 @@ const CourseCategory = () => {
   );
 };
 
-export default CourseCategory;
+export default CourseCategoryPage;

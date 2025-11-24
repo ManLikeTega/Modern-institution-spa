@@ -6,20 +6,22 @@ import Progress from "../sections/Progress";
 import Footer from "../sections/Footer";
 import Testimonial from "../sections/Testimonial";
 import Courses from "../sections/Courses";
+import Partners from "../sections/Partners";
+import Coding from "../sections/Coding";
 
 function HomePage() {
   return (
     <>
-      <main className="min-h-screen">
-        <Navbar />
-        <Hero />
-        <PopularCourses />
-        <Service />
-        <Progress />
-        <Courses />
-        <Testimonial />
-        <Footer />
-      </main>
+      <Navbar />
+      <Hero />
+      <PopularCourses />
+      <Service />
+      <Progress />
+      <Courses />
+      <Partners />
+      <Coding />
+      <Testimonial />
+      <Footer />
     </>
   );
 }

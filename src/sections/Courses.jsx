@@ -1,3 +1,5 @@
+import Badge from "../components/Badge.jsx";
+import { Link } from "react-router";
 import { courses } from "../data/home_data.js";
 import { ArrowRight, BookOpen, Users, Briefcase } from "lucide-react";
 
@@ -6,13 +8,11 @@ const Courses = () => {
 
   return (
     <section className="section bg-extra" id="courses">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
+      <div>
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-bacground text-red-700 px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-sm">
-            <BookOpen className="w-4 h-4" />
+          <Badge Icon={BookOpen} className="text-red-700 bg-white">
             Comprehensive Learning
-          </div>
+          </Badge>
 
           <h1 className="section_title">
             Our <span className="text-red-700">Courses</span>
@@ -26,7 +26,6 @@ const Courses = () => {
           </p>
         </div>
 
-        {/* Course Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {courses.map((course, index) => {
             const IconComponent = icons[index] || BookOpen;
@@ -35,39 +34,29 @@ const Courses = () => {
                 key={index}
                 className="group relative bg-bacground rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-red-200 hover:-translate-y-2"
               >
-                {/* Background Pattern */}
-                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-bacground to-red-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
                 <div className="relative z-10">
-                  {/* Icon */}
                   <div className="flex justify-center mb-6">
                     <div className="p-4 bg-red-100 rounded-2xl group-hover:bg-red-200 transition-colors duration-300">
                       <IconComponent className="w-8 h-8 text-red-700" />
                     </div>
                   </div>
 
-                  {/* Title */}
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-800 transition-colors">
                     {course.title}
                   </h3>
 
-                  {/* Description */}
                   <p className="text-lg text-gray-600 mb-8 leading-relaxed min-h-20">
                     {course.description}
                   </p>
 
-                  {/* CTA Button */}
-                  <a
-                    href={course.link}
+                  <Link
+                    to={course.link}
                     className="inline-flex items-center justify-center gap-3 bg-red-700 text-white px-8 py-4 rounded-xl hover:bg-red-800 transition-all duration-300 font-semibold group-hover:shadow-lg group-hover:scale-105 w-full"
                   >
                     Explore Course
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                 </div>
-
-                {/* Hover Effect Border */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-red-300 transition-colors duration-500 pointer-events-none" />
               </div>
             );
           })}

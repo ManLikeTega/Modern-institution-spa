@@ -5,8 +5,8 @@ function CoursesCategory({ categoryData }) {
   return (
     <>
       <section className="section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="space-y-32">
+        <div className="max-w-7xl mx-auto md:px-12">
+          <div className="flex flex-col gap-12 md:gap-16">
             {/* Professional Courses */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="relative aspect-4/3 bg-gray-100 rounded-lg overflow-hidden">
@@ -17,7 +17,7 @@ function CoursesCategory({ categoryData }) {
                 />
               </div>
 
-              <div className="space-y-6">
+              <div className="">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
                     <span className="bg-red-700 animate-ping size-1.5 rounded-full"></span>
@@ -101,7 +101,7 @@ function CoursesCategory({ categoryData }) {
                   src={categoryData.career.heroImage}
                 />
               </div>
-              <div className="lg:order-1 space-y-6">
+              <div className="lg:order-1">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
                     <span className="bg-red-700 animate-ping size-1.5 rounded-full"></span>
@@ -185,7 +185,8 @@ function CoursesCategory({ categoryData }) {
                   src={categoryData.corporate.heroImage}
                 />
               </div>
-              <div className="space-y-6">
+
+              <div>
                 <div>
                   <div className="flex items-center gap-3 mb-3">
                     <span className="bg-red-700 animate-ping size-1.5 rounded-full"></span>

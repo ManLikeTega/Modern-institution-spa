@@ -1,6 +1,6 @@
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
-import CourseCategory from "./pages/CourseCategory";
+import CourseCategoryPage from "./pages/CourseCategoryPage";
 import CoursesPage from "./pages/CoursesPage";
 import HomePage from "./pages/HomePage";
 import { Route, Routes } from "react-router";
@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/courses" element={<CoursesPage />} />
-        <Route path="/courses/:category" element={<CourseCategory />} />
+        <Route path="/courses/:category" element={<CourseCategoryPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
