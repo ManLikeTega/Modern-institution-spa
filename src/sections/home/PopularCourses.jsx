@@ -1,14 +1,14 @@
 import { useState } from "react";
-import CourseCard from "../components/CourseCard";
+import CourseCard from "../../components/CourseCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, FreeMode, Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { popularCourses } from "../data/home_data";
+import { popularCourses } from "../../data/home_data";
 
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
-import Badge from "../components/Badge";
+import Badge from "../../components/Badge";
 
 function PopularCourses() {
   const [activeTitle, setActiveTitle] = useState(null);

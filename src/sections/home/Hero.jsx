@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
-import { hero_slides as slides } from "../data/home_data.js";
+import { hero_slides as slides } from "../../data/home_data.js";
 import { ChevronLeft, ChevronRight, Star, Users, Award } from "lucide-react";
 import { Link } from "react-router";
 
