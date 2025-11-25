@@ -1,6 +1,6 @@
-import Badge from "../components/Badge.jsx";
+import Badge from "../../components/Badge.jsx";
 import { Link } from "react-router";
-import { courses } from "../data/home_data.js";
+import { courses } from "../../data/home_data.js";
 import { ArrowRight, BookOpen, Users, Briefcase } from "lucide-react";
 
 const Courses = () => {

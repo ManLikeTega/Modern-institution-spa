@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
-import { testimonials } from "../data/home_data.js";
+import { testimonials } from "../../data/home_data.js";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 import "swiper/css";

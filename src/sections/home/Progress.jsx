@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Award } from "lucide-react";
-import { progressStats } from "../data/home_data";
-import Badge from "../components/Badge";
+import { progressStats } from "../../data/home_data";
+import Badge from "../../components/Badge";
 
 function Progress() {
   const [counted, setCounted] = useState(false);

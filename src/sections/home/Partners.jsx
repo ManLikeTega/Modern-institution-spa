@@ -1,5 +1,5 @@
-import Badge from "../components/Badge.jsx";
-import { partners } from "../data/home_data.js";
+import Badge from "../../components/Badge.jsx";
+import { partners } from "../../data/home_data.js";
 import { Handshake, Award } from "lucide-react";
 
 const Partners = () => {

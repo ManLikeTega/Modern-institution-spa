@@ -1,12 +1,6 @@
-import {
-  GraduationCap,
-  Globe,
-  Users,
-  BookOpen,
-  ArrowRight,
-} from "lucide-react";
+import { BookOpen, ArrowRight } from "lucide-react";
 
-import { services } from "../data/home_data.js";
+import { services } from "../../data/home_data.js";
 
 function Services() {
   return (

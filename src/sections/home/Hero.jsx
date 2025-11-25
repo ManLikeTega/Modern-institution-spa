@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
 import { hero_slides as slides } from "../../data/home_data.js";
-import { ChevronLeft, ChevronRight, Star, Users, Award } from "lucide-react";
+import { Star, Users, Award } from "lucide-react";
 import { Link } from "react-router";
 
 // Swiper styles
