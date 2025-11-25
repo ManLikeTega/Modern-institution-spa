@@ -167,7 +167,7 @@ export const categoryData = {
       "Training and development involves improving the effectiveness of organizations and the individuals and teams within them. Give your team the IT skills development platform they need to level up their skills.",
     heroImage:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    layout: "corporate", // Different layout for corporate
+    layout: "simple", // Different layout for corporate
     sections: [
       {
         title: "What We Can Do For You",

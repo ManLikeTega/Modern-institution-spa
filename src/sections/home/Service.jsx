@@ -1,6 +1,7 @@
 import { BookOpen, ArrowRight } from "lucide-react";
 
 import { services } from "../../data/home_data.js";
+import { Link } from "react-router";
 
 function Services() {
   return (
@@ -69,10 +70,13 @@ function Services() {
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full bg-red-700 hover:bg-red-800 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 group-hover:shadow-lg flex items-center justify-center gap-2">
+                <Link
+                  to="/about"
+                  className="w-full bg-red-700 hover:bg-red-800 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 group-hover:shadow-lg flex items-center justify-center gap-2"
+                >
                   Learn More
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
               </div>
             );
           })}

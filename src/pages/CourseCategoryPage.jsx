@@ -3,27 +3,25 @@ import { useParams, Link } from "react-router";
 import { ArrowLeft, Clock, Users, Star, CheckCircle } from "lucide-react";
 import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
-import Footer from "../sections/Footer";
+import Footer from "../components/Footer";
 
 const CourseCategoryPage = () => {
   const { category } = useParams();
 
   const data = categoryData[category] || categoryData.professional;
 
-  // Helper function to render different layouts based on category
   const renderContent = () => {
     switch (data.layout) {
       case "detailed":
-        return renderProfessionalLayout();
-      case "corporate":
-        return renderCorporateLayout();
-      case "carreer":
+        return renderDetailed();
+      case "simple":
+        return renderSimple();
       default:
-        return renderCarreerLayout();
+        return renderDetailed();
     }
   };
 
-  const renderCorporateLayout = () => (
+  const renderSimple = () => (
     <div className="section">
       <div className="max-w-7xl mx-auto">
         <h2 className="section_title mb-10">What We Can Do For You</h2>
@@ -73,7 +71,7 @@ const CourseCategoryPage = () => {
     </div>
   );
 
-  const renderProfessionalLayout = () => (
+  const renderDetailed = () => (
     <div className="bg-extra section">
       <div className="max-w-7xl mx-auto">
         <h2 className="section_title mb-10">Our Courses Include</h2>
@@ -150,90 +148,9 @@ const CourseCategoryPage = () => {
     </div>
   );
 
-  const renderCarreerLayout = () => (
-    <div className="max-w-7xl mx-auto px-6 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {data.courses?.map((course) => (
-          <div
-            key={course.id}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200"
-          >
-            <div className="p-8">
-              {/* Course Header */}
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold text-gray-900">
-                  {course.title}
-                </h3>
-                {course.rating && (
-                  <div className="flex items-center gap-1 bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
-                    <Star className="w-4 h-4 fill-current" />
-                    <span>{course.rating}</span>
-                  </div>
-                )}
-              </div>
-
-              {/* Course Info */}
-              {(course.duration || course.students || course.level) && (
-                <div className="flex flex-wrap gap-4 mb-6">
-                  {course.duration && (
-                    <div className="flex items-center gap-2 text-gray-600">
-                      <Clock className="w-4 h-4" />
-                      <span className="text-sm">{course.duration}</span>
-                    </div>
-                  )}
-                  {course.students && (
-                    <div className="flex items-center gap-2 text-gray-600">
-                      <Users className="w-4 h-4" />
-                      <span className="text-sm">{course.students}</span>
-                    </div>
-                  )}
-                  {course.level && (
-                    <div className="flex items-center gap-2 text-gray-600">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="text-sm">{course.level}</span>
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {/* Description */}
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                {course.description}
-              </p>
-
-              {/* Features */}
-              {course.features && (
-                <div className="mb-8">
-                  <h4 className="font-semibold text-gray-900 mb-4">
-                    What You'll Learn:
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {course.features.map((feature, index) => (
-                      <div key={index} className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                        <span className="text-sm text-gray-700">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* CTA Button */}
-              <button className="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300">
-                Enroll Now - Get Started
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
   return (
-    <main className="min-h-screen bg-extra">
-      {/* Hero Section - Consistent for all categories */}
+    <>
       <Navbar />
-
       <Banner image={data.heroImage} position="left">
         <div className="max-w-7xl mx-auto px-6 py-16 relative z-10 text-white">
           <Link
@@ -260,12 +177,9 @@ const CourseCategoryPage = () => {
           </div>
         </div>
       </Banner>
-
-      {/* Dynamic Content based on layout */}
       {renderContent()}
-
       <Footer />
-    </main>
+    </>
   );
 };
 

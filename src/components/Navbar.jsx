@@ -37,7 +37,7 @@ const Navbar = () => {
           if (currentScrollY > 20) {
             setBg("lg:bg-primary lg:border-b-1");
             setNav_btn(
-              "from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 text-white before:hidden rounded-lg text-sm sm:text-base md:text-lg"
+              "bg-yellow-600  hover:bg-yellow-700 text-white before:hidden rounded-lg text-sm sm:text-base md:text-lg"
             );
           } else {
             setBg("lg:bg-transparent lg:border-b-0");
@@ -98,9 +98,11 @@ const Navbar = () => {
   }, [isCoursesOpen, isADSEOpen]);
 
   const isHome = location.pathname === "/";
-  const isCoursesPage = location.pathname.includes("/course");
   const isAboutPage = location.pathname === "/about";
+  const isCoursesPage = location.pathname.includes("/course");
   const isADSEPage = location.pathname.includes("/adse");
+  const isGalleryPage = location.pathname.includes("/gallery");
+  const isContactPage = location.pathname.includes("/contact");
 
   const courseCategories = courses.map((course) => ({
     name: course.title,
@@ -162,7 +164,9 @@ const Navbar = () => {
               <Link
                 to="/about"
                 className={`${
-                  isHome ? `before:block` : "before:hidden"
+                  isHome
+                    ? `before:block`
+                    : "before:hidden hover:text-secondary transition"
                 } nav_link`}
               >
                 about us
@@ -281,25 +285,39 @@ const Navbar = () => {
               </div>
             )}
 
-            <Link
-              className={`${
-                isHome
-                  ? `before:block`
-                  : "before:hidden hover:text-secondary transition"
-              } nav_link`}
-            >
-              Gallery
-            </Link>
-            <Link
-              to="/contact"
-              className={`${
-                isHome
-                  ? `${nav_btn}  `
-                  : "bg-yellow-600 hover:bg-yellow-700  text-white before:hidden rounded-lg text-sm sm:text-base md:text-lg"
-              } nav_link`}
-            >
-              contact us
-            </Link>
+            {isGalleryPage ? (
+              <span className="nav_link cursor-default before:w-full text-secondary">
+                gallery
+              </span>
+            ) : (
+              <Link
+                to="/gallery"
+                className={`${
+                  isHome
+                    ? `before:block`
+                    : "before:hidden hover:text-secondary transition"
+                } nav_link`}
+              >
+                gallery
+              </Link>
+            )}
+
+            {isContactPage ? (
+              <span className="nav_link bg-yellow-700  text-white before:hidden rounded-lg text-sm sm:text-base md:text-lg">
+                contact us
+              </span>
+            ) : (
+              <Link
+                to="/contact"
+                className={`${
+                  isHome
+                    ? `${nav_btn}  `
+                    : "bg-yellow-600 hover:bg-yellow-700  text-white before:hidden rounded-lg text-sm sm:text-base md:text-lg"
+                } nav_link`}
+              >
+                contact us
+              </Link>
+            )}
           </div>
 
           <button
@@ -373,7 +391,7 @@ const Navbar = () => {
               )}
 
               <li className="capitalize">
-                <a href="#">Gallery</a>
+                <Link to="/gallery">Gallery</Link>
               </li>
               <li className="capitalize">
                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>

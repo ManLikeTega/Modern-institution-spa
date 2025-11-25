@@ -3,11 +3,10 @@ import PopularCourses from "../sections/home/PopularCourses";
 import Service from "../sections/home/Service";
 import Progress from "../sections/home/Progress";
 import Courses from "../sections/home/Courses";
-import Coding from "../sections/home/Coding";
 import Partners from "../sections/home/Partners";
 import Testimonial from "../sections/home/Testimonial";
 import Navbar from "../components/Navbar";
-import Footer from "../sections/Footer";
+import Footer from "../components/Footer";
 
 function HomePage() {
   return (
@@ -19,7 +18,6 @@ function HomePage() {
       <Progress />
       <Courses />
       <Partners />
-      <Coding />
       <Testimonial />
       <Footer />
     </>

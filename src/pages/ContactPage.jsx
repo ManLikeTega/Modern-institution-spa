@@ -4,11 +4,11 @@ import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import Footer from "../sections/Footer";
+import Footer from "../components/Footer";
 
 function ContactPage() {
   return (
-    <div>
+    <>
       <Navbar />
       <Banner image={bannerImage}>
         <div className="relative z-10 text-white max-w-4xl px-4">
@@ -34,7 +34,7 @@ function ContactPage() {
 
       <ContactForm />
       <Footer />
-    </div>
+    </>
   );
 }
 
