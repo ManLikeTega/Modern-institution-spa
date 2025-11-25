@@ -17,6 +17,12 @@
   --font-fontTwo: "Roboto", sans-serif;
 }
 
+@layer utilities {
+  .h-hero {
+    height: calc(100vh - 65px);
+  }
+}
+
 @layer base {
   body {
     @apply bg-bacground text-textColorThick font-fontTwo;

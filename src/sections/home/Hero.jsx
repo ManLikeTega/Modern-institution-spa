@@ -40,7 +40,7 @@ function Hero() {
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Navigation]}
-        className="h-screen w-full"
+        className="h-hero lg:h-screen w-full"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative">
@@ -57,7 +57,7 @@ function Hero() {
                 <div className="max-w-2xl ml-0 lg:ml-8 xl:ml-16">
                   {/* Title */}
                   <MotionElement delay={0.4}>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    <h1 className="text-3xl sm:text-5xl md:text-5xl font-bold text-white mb-5 leading-tight">
                       {slide.title}
                     </h1>
                   </MotionElement>
@@ -117,7 +117,7 @@ function Hero() {
       </Swiper>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+      <div className="hidden lg:block lg:absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
         <div className="flex flex-col items-center gap-2 text-white">
           <span className="text-sm opacity-80">Scroll to explore</span>
 
