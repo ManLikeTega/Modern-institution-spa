@@ -4,4 +4,12 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [tailwindcss(), react()],
+  optimizeDeps: {
+    include: ["@emailjs/browser"],
+  },
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
 });

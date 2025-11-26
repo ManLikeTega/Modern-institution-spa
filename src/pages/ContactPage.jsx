@@ -1,5 +1,5 @@
-import ContactForm from "../sections/ContactForm";
-import bannerImage from "../assets/contact-banner.jpg";
+import ContactForm from "../sections/contact/ContactForm";
+import bannerImage from "../assets/contact_banner.jpg";
 import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
 /* eslint-disable no-unused-vars */
@@ -18,7 +18,7 @@ function ContactPage() {
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
             className="text-3xl md:text-4xl font-bold mb-1"
           >
-            Get in touch.
+            Get in touch
           </motion.h2>
 
           <motion.p
@@ -27,11 +27,10 @@ function ContactPage() {
             transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             className="text-base md:text-lg"
           >
-            We Are Excited To Attend To Your Enquiry.
+            We Are Excited To Attend To Your Enquiry
           </motion.p>
         </div>
       </Banner>
-
       <ContactForm />
       <Footer />
     </>

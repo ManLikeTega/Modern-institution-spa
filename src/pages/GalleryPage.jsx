@@ -6,7 +6,7 @@ function GalleryPage() {
   return (
     <>
       <Navbar />
-      <Banner>h</Banner>
+      <Banner></Banner>
       <Footer />
     </>
   );

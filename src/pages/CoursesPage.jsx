@@ -7,7 +7,7 @@ import CoursesCategory from "../sections/CoursesCategory";
 import { motion } from "framer-motion";
 import FAQ from "../sections/FAQ";
 
-import bannerImage from "../assets/courses-banner.jpg";
+import bannerImage from "../assets/courses_banner.jpg";
 
 function CoursesPage() {
   return (
