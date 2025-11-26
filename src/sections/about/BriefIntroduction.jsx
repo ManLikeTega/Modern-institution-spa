@@ -38,7 +38,7 @@ const BriefIntroduction = () => {
 
           {/* Content matching your structure */}
           <div className="space-y-6">
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p>
               At Aptech Fowobi, we're more than just a computer training centre
               —{" "}
               <span className="text-gray-500">
@@ -52,7 +52,7 @@ const BriefIntroduction = () => {
               worldwide in building successful and rewarding IT careers.
             </p>
 
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p>
               <span className="text-red-600 font-medium">
                 Our Story in Fowobi
               </span>{" "}
@@ -70,7 +70,7 @@ const BriefIntroduction = () => {
       </div>
 
       {/* Mission & Vision Side by Side */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10 lg:mt-16">
         {/* Mission */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -79,11 +79,12 @@ const BriefIntroduction = () => {
           transition={{ duration: 0.6 }}
           className="text-center lg:text-left"
         >
-          <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium mb-6 mx-auto w-fit">
             <Target className="w-4 h-4" />
             Our Mission
           </div>
-          <p className="text-lg text-gray-700 leading-relaxed">
+
+          <p>
             To provide industry-ready IT education that transforms lives and
             careers through practical, hands-on training and internationally
             recognized certifications.
@@ -98,11 +99,12 @@ const BriefIntroduction = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center lg:text-left"
         >
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium mb-6 mx-auto w-fit">
             <Eye className="w-4 h-4" />
             Our Vision
           </div>
-          <p className="text-lg text-gray-700 leading-relaxed">
+
+          <p>
             To be the leading technology education institution in Africa,
             empowering the next generation of digital innovators and tech
             leaders.

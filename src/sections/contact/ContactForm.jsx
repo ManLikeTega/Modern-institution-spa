@@ -89,7 +89,7 @@ function ContactForm() {
         }}
       />
 
-      <main className="p-5 md:p-20" id="contact">
+      <section className="section">
         <h3 className="text-2xl md:text-5xl font-bold mb-2">Contact Us</h3>
 
         <p className="text-gray-600 mb-6 text-base md:text-lg">
@@ -241,7 +241,7 @@ function ContactForm() {
             )}
           </button>
         </form>
-      </main>
+      </section>
     </>
   );
 }

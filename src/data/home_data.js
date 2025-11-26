@@ -103,11 +103,11 @@ export const services = [
     icon: GraduationCap,
     title: "Internationally Recognized Certification",
     description:
-      "Students receive an Advanced Diploma in Software Engineering (ADSE) - a qualification highly valued by employers and universities worldwide. Leveraging over 30 years of expertise in IT training, Aptech is committed to building successful technology careers.",
+      "Students receive an Advanced Diploma in Software Engineering (ADSE) - a qualification highly valued by employers and universities worldwide. Leveraging over 10 years of expertise in IT training, Aptech is committed to building successful technology careers.",
     features: [
       "Global Recognition",
       "Industry-Valued Diploma",
-      "30+ Years Expertise",
+      "10+ Years Expertise",
     ],
   },
   {
@@ -121,7 +121,7 @@ export const services = [
 
 export const progressStats = [
   {
-    value: 1000,
+    value: 100,
     suffix: "+",
     label: "Students Trained",
     icon: Users,
@@ -148,7 +148,7 @@ export const progressStats = [
     duration: 1800,
   },
   {
-    value: 50,
+    value: 5,
     suffix: "+",
     label: "Industry Partners",
     icon: Handshake,

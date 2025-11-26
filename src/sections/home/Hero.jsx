@@ -14,7 +14,7 @@ import "swiper/css/navigation";
 function Hero() {
   const stats = [
     { icon: Users, value: "1000+", label: "Students Trained" },
-    { icon: Award, value: "32+", label: "Years Experience" },
+    { icon: Award, value: "10+", label: "Years Experience" },
     { icon: Star, value: "4.9/5", label: "Rating" },
   ];
 
