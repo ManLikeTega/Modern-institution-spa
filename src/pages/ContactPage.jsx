@@ -32,11 +32,6 @@ function ContactPage() {
         </div>
       </Banner>
       <ContactForm />
-      <div>
-        <h1>Mr. Tommy, here is our acct number si</h1>
-        <p>8136814871</p>
-        <p>opay</p>
-      </div>
       <Footer />
     </>
   );
