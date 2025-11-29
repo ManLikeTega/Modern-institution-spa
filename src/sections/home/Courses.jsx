@@ -2,6 +2,7 @@ import Badge from "../../components/Badge.jsx";
 import { Link } from "react-router";
 import { courses } from "../../data/home_data.js";
 import { ArrowRight, BookOpen, Users, Briefcase } from "lucide-react";
+import MotionElement from "../../components/MotionElement.jsx";
 
 const Courses = () => {
   const icons = [BookOpen, Users, Briefcase];
@@ -13,23 +14,28 @@ const Courses = () => {
           Comprehensive Learning
         </Badge>
 
-        <h1 className="section_title">
-          Our <span className="text-red-700">Courses</span>
-        </h1>
+        <MotionElement delay={0.2}>
+          <h1 className="section_title">
+            Our <span className="text-red-700">Courses</span>
+          </h1>
+        </MotionElement>
 
-        <p>
-          You have nothing to worry about because Aptech Ajah Centre has you
-          covered. We provide comprehensive training from basic computer
-          operations to advanced professional skills, empowering you to become
-          proficient in no time.
-        </p>
+        <MotionElement delay={0.4}>
+          <p>
+            You have nothing to worry about because Aptech Ajah Centre has you
+            covered. We provide comprehensive training from basic computer
+            operations to advanced professional skills, empowering you to become
+            proficient in no time.
+          </p>
+        </MotionElement>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {courses.map((course, index) => {
           const IconComponent = icons[index] || BookOpen;
           return (
-            <div
+            <MotionElement
+              delay={index * 0.2}
               key={index}
               className="group relative bg-bacground rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-red-200 hover:-translate-y-2"
             >
@@ -56,13 +62,13 @@ const Courses = () => {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
-            </div>
+            </MotionElement>
           );
         })}
       </div>
 
       {/* Additional Info */}
-      <div className="text-center mt-10 md:mt-16">
+      <MotionElement delay={0.4} className="text-center mt-10 md:mt-16">
         <div className="inline-flex  sm:flex-row items-center gap-3 md:gap-8 bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
           <div className="text-center">
             <div className="text-3xl font-bold text-red-700 mb-2">100%</div>
@@ -83,7 +89,7 @@ const Courses = () => {
             <div className="text-gray-600">Mentorship</div>
           </div>
         </div>
-      </div>
+      </MotionElement>
     </section>
   );
 };

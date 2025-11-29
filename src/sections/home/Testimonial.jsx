@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Badge from "../../components/Badge.jsx";
+import MotionElement from "../../components/MotionElement.jsx";
 
 const Testimonial = () => {
   const renderStars = (rating) => {
@@ -28,14 +29,18 @@ const Testimonial = () => {
           Student Success Stories
         </Badge>
 
-        <h2 className="section_title">
-          What Our <span className="text-red-700">Students Say</span>
-        </h2>
+        <MotionElement delay={0.2}>
+          <h2 className="section_title">
+            What Our <span className="text-red-700">Students Say</span>
+          </h2>
+        </MotionElement>
 
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Hear from our graduates and current students about their
-          transformative learning experiences and career success at Aptech
-        </p>
+        <MotionElement delay={0.4}>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Hear from our graduates and current students about their
+            transformative learning experiences and career success at Aptech
+          </p>
+        </MotionElement>
       </div>
 
       {/* Swiper Container */}

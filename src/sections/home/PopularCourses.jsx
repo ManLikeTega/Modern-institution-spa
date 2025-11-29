@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import Badge from "../../components/Badge";
+import MotionElement from "../../components/MotionElement";
 
 function PopularCourses() {
   const [activeTitle, setActiveTitle] = useState(null);
@@ -20,17 +21,21 @@ function PopularCourses() {
           Most Popular
         </Badge>
 
-        <h2 className="section_title">
-          Popular <span className="text-red-700">Courses</span>
-        </h2>
+        <MotionElement delay={0.2}>
+          <h2 className="section_title">
+            Popular <span className="text-red-700">Courses</span>
+          </h2>
+        </MotionElement>
 
-        <p>
-          Explore our most sought-after courses that are transforming careers
-          and shaping the future of tech.
-        </p>
+        <MotionElement delay={0.4}>
+          <p>
+            Explore our most sought-after courses that are transforming careers
+            and shaping the future of tech.
+          </p>
+        </MotionElement>
       </div>
 
-      <div className="relative">
+      <MotionElement delay={0.6} className="relative">
         <Swiper
           spaceBetween={24}
           modules={[Mousewheel, FreeMode, Navigation]}
@@ -83,7 +88,7 @@ function PopularCourses() {
         <button className="popular-courses-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-red-500 hover:text-white transition-all duration-200 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-500">
           <ChevronRight className="w-6 h-6" />
         </button>
-      </div>
+      </MotionElement>
 
       {/* Progress Indicator */}
       <div className="flex justify-center mt-12">

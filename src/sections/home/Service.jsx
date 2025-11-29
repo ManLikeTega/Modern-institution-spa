@@ -1,27 +1,31 @@
 import { BookOpen, ArrowRight } from "lucide-react";
-
 import { services } from "../../data/home_data.js";
 import { Link } from "react-router";
+import Badge from "../../components/Badge.jsx";
+import MotionElement from "../../components/MotionElement.jsx";
 
 function Services() {
   return (
     <section className="section bg-extra">
       {/* Header */}
       <div className="text-center mb-10 md:mb-16">
-        <div className="inline-flex items-center gap-2 bg-white text-red-700 px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-sm">
-          <BookOpen className="w-4 h-4" />
+        <Badge Icon={BookOpen} className="bg-white text-red-700">
           Comprehensive Services
-        </div>
+        </Badge>
 
-        <h2 className="section_title">
-          Our <span className="text-red-700">Services</span>
-        </h2>
+        <MotionElement delay={0.2}>
+          <h2 className="section_title">
+            Our <span className="text-red-700">Services</span>
+          </h2>
+        </MotionElement>
 
-        <p>
-          Ready to transform your career? Whether you're starting fresh or
-          upgrading your skills, we'll guide you through your options and help
-          you reboot your professional journey for breakthrough success.
-        </p>
+        <MotionElement delay={0.4}>
+          <p>
+            Ready to transform your career? Whether you're starting fresh or
+            upgrading your skills, we'll guide you through your options and help
+            you reboot your professional journey for breakthrough success.
+          </p>
+        </MotionElement>
       </div>
 
       {/* Services */}
@@ -30,7 +34,8 @@ function Services() {
           const IconComponent = service.icon;
 
           return (
-            <div
+            <MotionElement
+              delay={index * 0.2}
               key={index}
               className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:-translate-y-2"
             >
@@ -74,13 +79,13 @@ function Services() {
                 Learn More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </div>
+            </MotionElement>
           );
         })}
       </div>
 
       {/* Additional Info */}
-      <div className="text-center mt-10 md:mt-16">
+      <MotionElement delay={0.4} className="text-center mt-10 md:mt-16">
         <div className="inline-flex  sm:flex-row items-center gap-3 md:gap-8 bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
           <div className="text-center">
             <div className="text-3xl font-bold text-red-700 mb-2">10+</div>
@@ -101,7 +106,7 @@ function Services() {
             <div className="text-gray-600">Success Rate</div>
           </div>
         </div>
-      </div>
+      </MotionElement>
     </section>
   );
 }

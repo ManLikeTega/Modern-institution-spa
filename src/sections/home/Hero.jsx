@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-import { motion } from "framer-motion";
+import MotionElement from "../../components/MotionElement.jsx";
 import { hero_slides as slides } from "../../data/home_data.js";
 import { Star, Users, Award } from "lucide-react";
 import { Link } from "react-router";
@@ -17,17 +16,6 @@ function Hero() {
     { icon: Award, value: "10+", label: "Years Experience" },
     { icon: Star, value: "4.9/5", label: "Rating" },
   ];
-
-  const MotionElement = ({ children, delay, className = "" }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
 
   return (
     <section className="relative w-full overflow-hidden">
@@ -56,21 +44,21 @@ function Hero() {
               <div className="max-w-9xl mx-auto px-6 w-full">
                 <div className="max-w-2xl ml-0 lg:ml-6 xl:ml-12">
                   {/* Title */}
-                  <MotionElement delay={0.4}>
+                  <MotionElement delay={0.4} once={false}>
                     <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-5 leading-tight">
                       {slide.title}
                     </h1>
                   </MotionElement>
 
                   {/* Description */}
-                  <MotionElement delay={0.6}>
+                  <MotionElement delay={0.6} once={false}>
                     <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed max-w-lg">
                       {slide.description}
                     </p>
                   </MotionElement>
 
                   {/* CTA Buttons */}
-                  <MotionElement delay={0.8}>
+                  <MotionElement delay={0.8} once={false}>
                     <div className="flex flex-col sm:flex-row gap-4 mb-8 sm:mb-12">
                       <a
                         href={`/#${slide.href || "courses"}`}
@@ -89,7 +77,7 @@ function Hero() {
                   </MotionElement>
 
                   {/* Stats */}
-                  <MotionElement delay={1.0}>
+                  <MotionElement delay={1.0} once={false}>
                     <div className="flex flex-wrap gap-6 sm:gap-8">
                       {stats.map((stat, statIndex) => {
                         const IconComponent = stat.icon;
