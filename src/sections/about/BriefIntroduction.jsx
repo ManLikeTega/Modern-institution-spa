@@ -12,8 +12,8 @@ const BriefIntroduction = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="rounded-2xl shadow-lg w-full object-cover lg:w-1/2"
-          src="https://aptechajah.com/assets/gallery1-Ba6BkcRG.webp"
+          className="rounded-lg shadow-lg w-full object-cover object-bottom h-120 lg:w-1/2"
+          src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-6/469904453_565529286197915_6618861138116782213_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEmk7VdZz7qVttuEUnfITIV2nnneDo0h_naeed4OjSH-StlyZzaqh77QM2_mISNKaO2WUIW1g99VnmsxswzV7Lg&_nc_ohc=GhLHlIyNPnEQ7kNvwHd6iLs&_nc_oc=AdmTLh2iTAP_fuLGrynKtQVHpDuhl09btjx5EuJZJdpqOZy6j8-w4W2GgZ003cOzzCs&_nc_zt=23&_nc_ht=scontent-los2-1.xx&_nc_gid=JcqwR_j3HZe22uzDg2-6_g&oh=00_Afh3rU3Rn6959KHHs7xv1_RUUgjiDjKf4qXaH2KKJv588w&oe=69313682"
         />
 
         {/* Right Column - Content */}

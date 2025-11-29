@@ -11,14 +11,14 @@ function Banner({ image, position = "center", children }) {
 
   return (
     <>
-      <main
+      <div
         className={`relative min-h-60 lg:min-h-[400px] flex items-center text-center text-white bg-cover bg-fixed bg-no-repeat ${justify}`}
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="absolute inset-0 bg-black/75"></div>
 
         {children}
-      </main>
+      </div>
     </>
   );
 }

@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 import { faqs } from "../data/faqs_data";
+import MotionElement from "../components/MotionElement";
+import Badge from "../components/Badge";
 
-function FAQ() {
+function FAQ({ bg = "bg-extra", bg_tab = "bg-bacground" }) {
   const [activeFaq, setActiveFaq] = useState(null);
 
   const toggleFaq = (index) => {
@@ -11,19 +13,39 @@ function FAQ() {
 
   return (
     <>
-      <section className="section bg-extra" id="faq">
-        <div>
-          <h1 className="section_title text-center mb-4">FAQs</h1>
+      <section className={`section ${bg}`} id="faq">
+        <div className="text-center mb-10">
+          <Badge
+            Icon={HelpCircle}
+            className={`${
+              bg == "bg-extra" ? "bg-white" : "bg-red-100"
+            } text-red-700`}
+          >
+            Frequently Asked Questions
+          </Badge>
 
-          <p className="text-center">Got questions? We've got the answers.</p>
+          <MotionElement delay={0.2}>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Got Questions?{" "}
+              <span className="text-red-700">We've Got Answers</span>
+            </h2>
+          </MotionElement>
 
-          <div className="w-full">
-            <div className="flex flex-col items-center mt-10">
-              <ul className="flex flex-col gap-3 w-full md:max-w-6xl">
-                {faqs.map((faq, index) => (
-                  <li
-                    key={index}
-                    className="bg-bacground shadow-md hover:shadow-xl border border-neutral-200 rounded-lg cursor-pointer transition-all duration-300 ease-in-out overflow-hidden hover:border-neutral-400"
+          <MotionElement delay={0.4}>
+            <p>
+              Find quick answers to common questions about our courses,
+              admissions, and everything in between.
+            </p>
+          </MotionElement>
+        </div>
+
+        <div className="w-full">
+          <div className="flex flex-col items-center mt-10">
+            <div className="flex flex-col gap-3 w-full md:max-w-6xl">
+              {faqs.map((faq, index) => (
+                <MotionElement key={index}>
+                  <div
+                    className={`${bg_tab} shadow-md hover:shadow-xl border border-neutral-200 rounded-lg cursor-pointer transition-all duration-300 ease-in-out overflow-hidden hover:border-neutral-400 `}
                     onClick={() => toggleFaq(index)}
                   >
                     <div className="flex items-start justify-between p-5 md:p-6">
@@ -47,9 +69,9 @@ function FAQ() {
                         </p>
                       </div>
                     )}
-                  </li>
-                ))}
-              </ul>
+                  </div>
+                </MotionElement>
+              ))}
             </div>
           </div>
         </div>
