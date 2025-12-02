@@ -3,11 +3,16 @@ import MotionElement from "../../components/MotionElement.jsx";
 import { partners } from "../../data/home_data.js";
 import { Handshake, Award } from "lucide-react";
 
-const Partners = () => {
+const Partners = ({ bg = "bg-extra" }) => {
   return (
-    <section className="section">
+    <section className={`section ${bg}`} id="partners">
       <div className="text-center mb-16">
-        <Badge Icon={Handshake} className="text-red-700 bg-red-100">
+        <Badge
+          Icon={Handshake}
+          className={`${
+            bg == "bg-extra" ? "bg-white" : "bg-red-100"
+          } text-red-700`}
+        >
           Our Esteemed Partners
         </Badge>
 

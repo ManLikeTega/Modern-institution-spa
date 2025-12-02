@@ -17,7 +17,7 @@ function HomePage() {
       {/* <Service /> */}
       <Progress />
       {/* <Courses /> */}
-      <Partners />
+      <Partners bg="bg-bacground" />
       <Testimonial />
       <Footer />
     </>

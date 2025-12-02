@@ -90,90 +90,98 @@ function ContactForm() {
       />
 
       <form className="space-y-4" onSubmit={handleSubmit(onSubmitHandler)}>
-        {/* Name */}
-        <div>
-          <label htmlFor="name" className="block font-medium mb-1">
-            Your Name:
-          </label>
-          <input
-            id="name"
-            {...register("name", { required: "Name is required" })}
-            placeholder="Enter your name"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-            disabled={isSubmitting}
-          />
-          {errors.name && (
-            <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-          )}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {/* Name */}
+          <div>
+            <label htmlFor="name" className="block font-medium mb-1">
+              Your Name:
+            </label>
+            <input
+              id="name"
+              {...register("name", { required: "Name is required" })}
+              placeholder="Enter your name"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+              disabled={isSubmitting}
+            />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+            )}
+          </div>
+
+          {/* Email */}
+          <div>
+            <label htmlFor="email" className="block font-medium mb-1">
+              Your Email:
+            </label>
+            <input
+              id="email"
+              type="email"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: "Invalid email address",
+                },
+              })}
+              placeholder="Enter your email"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+              disabled={isSubmitting}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
+            )}
+          </div>
         </div>
 
-        {/* Email */}
-        <div>
-          <label htmlFor="email" className="block font-medium mb-1">
-            Your Email:
-          </label>
-          <input
-            id="email"
-            type="email"
-            {...register("email", {
-              required: "Email is required",
-              pattern: {
-                value: /^\S+@\S+$/i,
-                message: "Invalid email address",
-              },
-            })}
-            placeholder="Enter your email"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-            disabled={isSubmitting}
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-          )}
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {/* Phone */}
+          <div>
+            <label htmlFor="phone" className="block font-medium mb-1">
+              Your Phone:
+            </label>
+            <input
+              id="phone"
+              type="tel"
+              {...register("phone", { required: "Phone number is required" })}
+              placeholder="Enter your phone number"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+              disabled={isSubmitting}
+            />
+            {errors.phone && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.phone.message}
+              </p>
+            )}
+          </div>
 
-        {/* Phone */}
-        <div>
-          <label htmlFor="phone" className="block font-medium mb-1">
-            Your Phone:
-          </label>
-          <input
-            id="phone"
-            type="tel"
-            {...register("phone", { required: "Phone number is required" })}
-            placeholder="Enter your phone number"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-            disabled={isSubmitting}
-          />
-          {errors.phone && (
-            <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
-          )}
-        </div>
-
-        {/* Location */}
-        <div>
-          <label htmlFor="location" className="block font-medium mb-1">
-            Location:
-          </label>
-          <select
-            id="location"
-            {...register("location", { required: "Location is required" })}
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
-            disabled={isSubmitting}
-          >
-            <option value="">Select your location</option>
-            <option value="new_york">New York</option>
-            <option value="los_angeles">Los Angeles</option>
-            <option value="chicago">Chicago</option>
-            <option value="houston">Houston</option>
-            <option value="miami">Miami</option>
-            <option value="seattle">Seattle</option>
-            <option value="boston">Boston</option>
-          </select>
-          {errors.location && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.location.message}
-            </p>
-          )}
+          {/* Location */}
+          <div>
+            <label htmlFor="location" className="block font-medium mb-1">
+              Location:
+            </label>
+            <select
+              id="location"
+              {...register("location", { required: "Location is required" })}
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+              disabled={isSubmitting}
+            >
+              <option value="">Select your location</option>
+              <option value="new_york">New York</option>
+              <option value="los_angeles">Los Angeles</option>
+              <option value="chicago">Chicago</option>
+              <option value="houston">Houston</option>
+              <option value="miami">Miami</option>
+              <option value="seattle">Seattle</option>
+              <option value="boston">Boston</option>
+            </select>
+            {errors.location && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.location.message}
+              </p>
+            )}
+          </div>
         </div>
 
         {/* Message */}
@@ -200,7 +208,7 @@ function ContactForm() {
             className={`text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
               isSubmitting
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-yellow-600 hover:bg-yellow-700 transform hover:scale-105"
+                : "bg-red-600 hover:bg-red-700 transform hover:scale-105"
             }`}
           >
             {isSubmitting ? (

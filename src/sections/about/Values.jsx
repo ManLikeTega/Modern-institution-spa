@@ -1,37 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import { Target, Star, TrendingUp, Heart, Users } from "lucide-react";
+import { Star } from "lucide-react";
 import Badge from "../../components/Badge";
+import { values } from "../../data/about_data";
 
-const MissionVisionValues = () => {
-  const values = [
-    {
-      icon: Star,
-      title: "Excellence",
-      description: "Providing high-quality and updated training.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Innovation",
-      description: "Encouraging creativity and problem-solving.",
-    },
-    {
-      icon: Heart,
-      title: "Integrity",
-      description: "Upholding professionalism and transparency.",
-    },
-    {
-      icon: Users,
-      title: "Accessibility",
-      description: "Making tech education available to everyone.",
-    },
-    {
-      icon: Target,
-      title: "Growth",
-      description: "Supporting continuous learning and improvement.",
-    },
-  ];
-
+const Values = () => {
   return (
     <section className="section bg-extra">
       {/* Core Values */}
@@ -76,4 +49,4 @@ const MissionVisionValues = () => {
   );
 };
 
-export default MissionVisionValues;
+export default Values;

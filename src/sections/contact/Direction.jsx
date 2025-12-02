@@ -48,8 +48,8 @@ const Directions = () => {
             className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 border border-gray-200"
           >
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                <MapPin className="w-6 h-6 text-green-600" />
+              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                <MapPin className="w-6 h-6 text-red-600" />
               </div>
               <div>
                 <div className="font-bold text-gray-900">Easy to Find</div>

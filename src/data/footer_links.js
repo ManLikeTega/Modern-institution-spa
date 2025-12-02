@@ -6,12 +6,11 @@ import {
   Database,
   Cloud,
   Smartphone,
-  Twitter,
   Facebook,
-  Instagram,
   Linkedin,
   MapPin,
 } from "lucide-react";
+import { FaWhatsapp, FaTiktok } from "react-icons/fa";
 
 export const quickLinks = [
   { name: "Home", href: "/" },
@@ -31,10 +30,10 @@ export const programs = [
 
 export const socialLinks = [
   {
-    name: "Twitter",
-    href: "https://twitter.com/aceajahcentre",
-    icon: Twitter,
-    ariaLabel: "Follow us on Twitter",
+    name: "Tiktok",
+    href: "https://vm.tiktok.com/ZSHTsyv9L32Jh-qXcQH/",
+    icon: FaTiktok,
+    ariaLabel: "Follow us on Tiktok",
   },
   {
     name: "Facebook",
@@ -43,10 +42,10 @@ export const socialLinks = [
     ariaLabel: "Like us on Facebook",
   },
   {
-    name: "Instagram",
-    href: "https://www.instagram.com/aptech_ajah",
-    icon: Instagram,
-    ariaLabel: "Follow us on Instagram",
+    name: "Whatsapp",
+    href: "https://wa.link/umvmbv",
+    icon: FaWhatsapp,
+    ariaLabel: "Connect with us on Whatsapp",
   },
   {
     name: "LinkedIn",

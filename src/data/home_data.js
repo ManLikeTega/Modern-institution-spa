@@ -24,7 +24,7 @@ export const hero_slides = [
     badge: "Global Partnerships",
     icon: Globe,
     cta: "Explore Partnerships",
-    href: "/partnerships",
+    href: "/#partners",
   },
   {
     image:

@@ -60,12 +60,21 @@ function Hero() {
                   {/* CTA Buttons */}
                   <MotionElement delay={0.8} once={false}>
                     <div className="flex flex-col sm:flex-row gap-4 mb-8 sm:mb-12">
-                      <a
-                        href={`/#${slide.href || "courses"}`}
-                        className="bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-red-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                      >
-                        {slide.cta}
-                      </a>
+                      {slide.href.includes("#") ? (
+                        <a
+                          href={slide.href}
+                          className="bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-red-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        >
+                          {slide.cta}
+                        </a>
+                      ) : (
+                        <Link
+                          to={slide.href}
+                          className="bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-red-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                        >
+                          {slide.cta}
+                        </Link>
+                      )}
 
                       <Link
                         to="/about"

@@ -30,17 +30,14 @@ function GetInTouch() {
           </MotionElement>
         </div>
 
-        <MotionElement className="flex flex-col gap-3 lg:flex-row">
+        <div className="flex flex-col gap-3 lg:flex-row">
           <div className="w-full lg:w-1/2">
             {contactInfo.map((item, index) => {
               const IconComponent = item.icon;
               return (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                <MotionElement
+                  key={index}
+                  delay={index * 0.1}
                   className={`flex items-start gap-4 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300  border border-gray-200 ${
                     index > 0 && "mt-3"
                   }`}
@@ -49,15 +46,15 @@ function GetInTouch() {
                     <IconComponent className="w-6 h-6 text-red-600" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">
+                    <h4 className="font-semibold text-gray-900 mb-1 text-sm">
                       {item.label}
                     </h4>
-                    <p className="text-gray-700 font-medium mb-1">
+                    <p className="text-gray-700 font-medium mb-1 text-lg">
                       {item.value}
                     </p>
                     <p className="text-sm text-gray-500">{item.description}</p>
                   </div>
-                </motion.div>
+                </MotionElement>
               );
             })}
           </div>
@@ -77,7 +74,7 @@ function GetInTouch() {
               <ContactForm />
             </div>
           </MotionElement>
-        </MotionElement>
+        </div>
       </section>
     </>
   );
