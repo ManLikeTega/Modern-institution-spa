@@ -10,17 +10,6 @@ import Badge from "../../components/Badge.jsx";
 import MotionElement from "../../components/MotionElement.jsx";
 
 const Testimonial = () => {
-  const renderStars = (rating) => {
-    return Array.from({ length: 5 }).map((_, index) => (
-      <Star
-        key={index}
-        className={`w-4 h-4 ${
-          index < rating ? "text-yellow-400 fill-current" : "text-gray-300"
-        }`}
-      />
-    ));
-  };
-
   return (
     <section className="section bg-extra">
       {/* Header */}
@@ -47,16 +36,8 @@ const Testimonial = () => {
       <div className="relative">
         <Swiper
           modules={[Pagination, Autoplay, Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          breakpoints={{
-            768: {
-              slidesPerView: 1,
-            },
-            1024: {
-              slidesPerView: 1,
-            },
-          }}
+          spaceBetween={20}
+          slidesPerView={3}
           pagination={{
             clickable: true,
             el: ".testimonial-pagination",
@@ -76,21 +57,9 @@ const Testimonial = () => {
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
-              <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 p-8 md:p-12 border border-gray-100">
-                {/* Quote Icon */}
-                <div className="flex justify-center mb-6">
-                  <div className="p-4 bg-red-50 rounded-2xl">
-                    <Quote className="w-8 h-8 text-red-500 opacity-60" />
-                  </div>
-                </div>
-
-                {/* Rating */}
-                <div className="flex justify-center gap-1 mb-6">
-                  {renderStars(testimonial.rating || 5)}
-                </div>
-
+              <div className="flex flex-col justify-between bg-bacground rounded-lg shadow-lg hover:shadow-xl transition-all duration-500 p-6 md:p-12 border h-100 border-gray-100">
                 {/* Testimonial Text */}
-                <blockquote className="text-xl text-gray-700 mb-8 leading-relaxed text-center italic max-w-4xl mx-auto">
+                <blockquote className="text-md mb-8 leading-relaxed text-center italic max-w-4xl mx-auto">
                   "{testimonial.text}"
                 </blockquote>
 
@@ -102,17 +71,12 @@ const Testimonial = () => {
                     className="w-16 h-16 rounded-full object-cover border-4 border-red-200 shadow-md"
                   />
                   <div className="text-center sm:text-left">
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">
                       {testimonial.name}
                     </h3>
-                    <p className="text-red-600 font-semibold mb-2">
+                    <p className="text-red-600 font-semibold mb-2 text-sm">
                       {testimonial.course}
                     </p>
-                    {testimonial.company && (
-                      <p className="text-gray-500 text-sm">
-                        Now at {testimonial.company}
-                      </p>
-                    )}
                   </div>
                 </div>
               </div>

@@ -7,7 +7,6 @@ import Logo from "./Logo";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
-  const [isADSEOpen, setIsADSEOpen] = useState(false);
   const [bg, setBg] = useState("lg:bg-transparent lg:border-b-0");
   const [nav_btn, setNav_btn] = useState("");
   const location = useLocation();
@@ -75,7 +74,6 @@ const Navbar = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsCoursesOpen(false);
-      setIsADSEOpen(false);
       setIsMenuOpen(false);
     }, 0);
 
@@ -88,19 +86,15 @@ const Navbar = () => {
       if (isCoursesOpen && !event.target.closest(".courses-dropdown")) {
         setIsCoursesOpen(false);
       }
-      if (isADSEOpen && !event.target.closest(".adse-dropdown")) {
-        setIsADSEOpen(false);
-      }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isCoursesOpen, isADSEOpen]);
+  }, [isCoursesOpen]);
 
   const isHome = location.pathname === "/";
   const isAboutPage = location.pathname === "/about";
   const isCoursesPage = location.pathname.includes("/course");
-  const isADSEPage = location.pathname.includes("/adse");
   const isGalleryPage = location.pathname.includes("/gallery");
   const isContactPage = location.pathname.includes("/contact");
 
@@ -108,13 +102,6 @@ const Navbar = () => {
     name: course.title,
     path: course.link,
   }));
-
-  const ADSEDropdownItems = [
-    { name: "ADSE Overview", href: "/adse/overview" },
-    { name: "Curriculum", href: "/adse/curriculum" },
-    { name: "Career Paths", href: "/adse/careers" },
-    { name: "Admission Requirements", href: "/adse/admission" },
-  ];
 
   return (
     <nav
@@ -218,73 +205,6 @@ const Navbar = () => {
               </Link>
             )}
 
-            {/* ADSE Dropdown */}
-            {isADSEPage ? (
-              <div className="relative adse-dropdown text-secondary">
-                <button
-                  onClick={() => setIsADSEOpen(!isADSEOpen)}
-                  className={`${
-                    isHome ? `before:block` : "before:hidden "
-                  } nav_link flex items-center gap-1`}
-                >
-                  ADSE
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      isADSEOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {isADSEOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white text-black rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                    {ADSEDropdownItems.map((item, index) => (
-                      <Link
-                        key={index}
-                        to={item.href}
-                        className="block px-4 py-2 hover:bg-secondary/30 transition-colors"
-                        onClick={() => setIsADSEOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className="relative adse-dropdown">
-                <button
-                  onClick={() => setIsADSEOpen(!isADSEOpen)}
-                  className={`${
-                    isHome
-                      ? `before:block`
-                      : "before:hidden hover:text-secondary transition"
-                  } nav_link flex items-center gap-1`}
-                >
-                  ADSE
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      isADSEOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {isADSEOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white text-black rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                    {ADSEDropdownItems.map((item, index) => (
-                      <Link
-                        key={index}
-                        to={item.href}
-                        className="block px-4 py-2 hover:bg-secondary/30 transition-colors"
-                        onClick={() => setIsADSEOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-
             {isGalleryPage ? (
               <span className="nav_link cursor-default before:w-full text-secondary">
                 gallery
@@ -331,6 +251,16 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="mt-5 lg:hidden">
             <ul className="flex flex-col gap-5">
+              {isHome ? (
+                <li className="capitalize opacity-70 cursor-default">home</li>
+              ) : (
+                <li className="capitalize">
+                  <Link to="/" onClick={() => setIsMenuOpen(false)}>
+                    home
+                  </Link>
+                </li>
+              )}
+
               {/* Mobile About Us */}
               {isAboutPage ? (
                 <li className="capitalize opacity-70 cursor-default">
@@ -367,32 +297,10 @@ const Navbar = () => {
                 </li>
               )}
 
-              {/* Mobile ADSE */}
-              {isADSEPage ? (
-                <>
-                  <li className="capitalize font-semibold">ADSE</li>
-                  {ADSEDropdownItems.map((item, index) => (
-                    <li key={index} className="capitalize pl-4">
-                      <Link to={item.href} onClick={() => setIsMenuOpen(false)}>
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </>
-              ) : (
-                <li className="capitalize">
-                  <Link
-                    to="/adse/overview"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    ADSE
-                  </Link>
-                </li>
-              )}
-
               <li className="capitalize">
                 <Link to="/gallery">Gallery</Link>
               </li>
+
               <li className="capitalize">
                 <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                   contact us

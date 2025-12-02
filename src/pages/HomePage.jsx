@@ -14,9 +14,9 @@ function HomePage() {
       <Navbar />
       <Hero />
       <PopularCourses />
-      <Service />
+      {/* <Service /> */}
       <Progress />
-      <Courses />
+      {/* <Courses /> */}
       <Partners />
       <Testimonial />
       <Footer />

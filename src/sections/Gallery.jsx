@@ -81,11 +81,6 @@ const Gallery = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {album.images.map((image, imageIndex) => (
                   <motion.div
-                    key={imageIndex}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: imageIndex * 0.1 }}
                     className="group relative aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
                     onClick={() => openLightbox(albumIndex, imageIndex)}
                   >
