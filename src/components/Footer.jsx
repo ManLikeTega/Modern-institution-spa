@@ -8,22 +8,9 @@ import {
 } from "../data/footer_links";
 import { Mail, ChevronRight, Send, CheckCircle2 } from "lucide-react";
 import Logo from "./Logo";
+import { Clock } from "lucide-react";
 
 function Footer() {
-  const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (email) {
-      console.log("Subscribing email:", email);
-      setIsSubscribed(true);
-      setEmail("");
-
-      setTimeout(() => setIsSubscribed(false), 5000);
-    }
-  };
-
   const currentYear = new Date().getFullYear();
 
   return (
@@ -102,43 +89,25 @@ function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="footer_header">Newsletter</h3>
+            <h3 className="footer_header">Open Hours</h3>
 
-            <p className="mb-6">
-              Stay updated with our latest courses, events, and IT industry
-              insights.
-            </p>
+            <ul>
+              <li className="flex items-center gap-2">
+                <Clock className="w-4 h-4 " />
+                <div>
+                  <p>Mon - Friday</p>
+                  <p>9:00 AM - 6:00 PM</p>
+                </div>
+              </li>
 
-            <form onSubmit={handleSubscribe} className="space-y-4">
-              <div className="relative">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 backdrop-blur-lg border border-white/20 text-white placeholder-white/50 focus:outline-none transition-all"
-                  required
-                  aria-label="Email for newsletter subscription"
-                />
-
-                <Mail className="absolute right-3 top-3.5 w-5 h-5 text-grey-800" />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-third hover:bg-third/50 active:bg-third text-white py-3 px-6 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 focus:outline-none flex items-center justify-center gap-2"
-              >
-                <Send className="w-4 h-4" />
-                Subscribe Now
-              </button>
-            </form>
-
-            {isSubscribed && (
-              <div className="mt-4 p-3 bg-green-600 text-white rounded-lg flex items-center gap-2 animate-fade-in">
-                <CheckCircle2 className="w-5 h-5" />
-                <span>Thank you for subscribing!</span>
-              </div>
-            )}
+              <li className="flex items-center gap-2">
+                <Clock className="w-4 h-4 " />
+                <div>
+                  <p>Sat & Sun</p>
+                  <p>09:00 AM - 12:00 PM</p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -177,28 +146,6 @@ function Footer() {
                   );
                 })}
               </div>
-            </div>
-
-            {/* Additional Links */}
-            <div className="flex gap-6 text-sm">
-              <a
-                href="/privacy"
-                className="text-gray-200 hover:text-white transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="/terms"
-                className="text-gray-200 hover:text-white transition-colors"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="/sitemap"
-                className="text-gray-200 hover:text-white transition-colors"
-              >
-                Sitemap
-              </a>
             </div>
           </div>
         </div>
