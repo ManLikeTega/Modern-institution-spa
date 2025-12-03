@@ -38,7 +38,7 @@ function ContactForm() {
         date: new Date().toLocaleString(),
       };
 
-      await emailjs.send("service_rqrol6e", "template_ffw1zct", templateParams);
+      await emailjs.send("service_pfv045l", "template_ffw1zct", templateParams);
 
       // Dismiss loading toast and show success
       toast.dismiss(loadingToast);
