@@ -27,7 +27,7 @@ function CourseCard({
 
   return (
     <motion.div
-      className="relative rounded-2xl h-[400px] overflow-hidden cursor-pointer group"
+      className="relative rounded-lg h-[400px] overflow-hidden cursor-pointer group"
       onClick={handleCardClick}
       onKeyPress={handleKeyPress}
       tabIndex={0}

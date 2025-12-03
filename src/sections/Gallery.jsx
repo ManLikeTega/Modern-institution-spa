@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { galleryData } from "../data/gallery_data";
 import { X, ChevronLeft, ChevronRight, Image as ImageIcon } from "lucide-react";
+import MotionElement from "../components/MotionElement";
+import Badge from "../components/Badge";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -30,39 +33,33 @@ const Gallery = () => {
 
   return (
     <section className="section bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className=" px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <ImageIcon className="w-4 h-4" />
+        <div className="text-center mb-16">
+          <Badge Icon={ImageIcon} className="bg-red-100 text-red-700">
             Our Gallery
-          </div>
+          </Badge>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Life at <span className="text-red-700">Aptech Fowobi</span>
-          </h2>
+          <MotionElement delay={0.2}>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Life at <span className="text-red-700">Aptech Fowobi</span>
+            </h2>
+          </MotionElement>
 
-          <p>
-            Explore our students, events, and the vibrant learning environment
-            that makes Aptech Ajah special.
-          </p>
-        </motion.div>
+          <MotionElement delay={0.4}>
+            <p>
+              Explore our students, events, and the vibrant learning environment
+              that makes Aptech Ajah special.
+            </p>
+          </MotionElement>
+        </div>
 
         {/* Gallery Sections */}
         <div className="space-y-20">
           {galleryData.map((album, albumIndex) => (
-            <motion.div
+            <MotionElement
               key={albumIndex}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: albumIndex * 0.1 }}
+              delay={albumIndex * 0.1}
               className="space-y-8"
             >
               {/* Album Header */}
@@ -80,7 +77,7 @@ const Gallery = () => {
               {/* Images Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {album.images.map((image, imageIndex) => (
-                  <motion.div
+                  <div
                     className="group relative aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
                     onClick={() => openLightbox(albumIndex, imageIndex)}
                   >
@@ -96,10 +93,10 @@ const Gallery = () => {
                         <ImageIcon className="w-8 h-8 text-white" />
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </MotionElement>
           ))}
         </div>
 

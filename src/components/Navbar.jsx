@@ -1,12 +1,10 @@
 import { Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { courses } from "../data/home_data";
+import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCoursesOpen, setIsCoursesOpen] = useState(false);
   const [bg, setBg] = useState("lg:bg-transparent lg:border-b-0");
   const [nav_btn, setNav_btn] = useState("");
   const location = useLocation();
@@ -70,38 +68,11 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close dropdowns when route changes
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsCoursesOpen(false);
-      setIsMenuOpen(false);
-    }, 0);
-
-    return () => clearTimeout(timer);
-  }, [location.pathname]);
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isCoursesOpen && !event.target.closest(".courses-dropdown")) {
-        setIsCoursesOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isCoursesOpen]);
-
   const isHome = location.pathname === "/";
   const isAboutPage = location.pathname === "/about";
-  const isCoursesPage = location.pathname.includes("/course");
+  const isCoursesPage = location.pathname.includes("/courses");
   const isGalleryPage = location.pathname.includes("/gallery");
   const isContactPage = location.pathname.includes("/contact");
-
-  const courseCategories = courses.map((course) => ({
-    name: course.title,
-    path: course.link,
-  }));
 
   return (
     <nav
@@ -160,38 +131,10 @@ const Navbar = () => {
               </Link>
             )}
 
-            {/* Courses Dropdown */}
             {isCoursesPage ? (
-              <div className="relative courses-dropdown text-secondary">
-                <button
-                  onClick={() => setIsCoursesOpen(!isCoursesOpen)}
-                  className={`${
-                    isHome ? `before:block` : "before:hidden "
-                  } nav_link flex items-center gap-1`}
-                >
-                  courses
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      isCoursesOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {isCoursesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white text-black rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                    {courseCategories.map((category) => (
-                      <Link
-                        key={category.path}
-                        to={category.path}
-                        className="block px-4 py-2 hover:bg-secondary/30 transition-colors"
-                        onClick={() => setIsCoursesOpen(false)}
-                      >
-                        {category.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <span className="nav_link cursor-default before:w-full text-secondary">
+                courses
+              </span>
             ) : (
               <Link
                 to="/courses"
@@ -261,7 +204,6 @@ const Navbar = () => {
                 </li>
               )}
 
-              {/* Mobile About Us */}
               {isAboutPage ? (
                 <li className="capitalize opacity-70 cursor-default">
                   about us
@@ -274,21 +216,10 @@ const Navbar = () => {
                 </li>
               )}
 
-              {/* Mobile Courses */}
               {isCoursesPage ? (
-                <>
-                  <li className="capitalize font-semibold">courses</li>
-                  {courseCategories.map((category) => (
-                    <li key={category.path} className="capitalize pl-4">
-                      <Link
-                        to={category.path}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {category.name}
-                      </Link>
-                    </li>
-                  ))}
-                </>
+                <li className="capitalize opacity-70 cursor-default">
+                  courses
+                </li>
               ) : (
                 <li className="capitalize">
                   <Link to="/courses" onClick={() => setIsMenuOpen(false)}>
@@ -297,15 +228,29 @@ const Navbar = () => {
                 </li>
               )}
 
-              <li className="capitalize">
-                <Link to="/gallery">Gallery</Link>
-              </li>
+              {isGalleryPage ? (
+                <li className="capitalize opacity-70 cursor-default">
+                  gallery
+                </li>
+              ) : (
+                <li className="capitalize">
+                  <Link to="/gallery" onClick={() => setIsMenuOpen(false)}>
+                    gallery
+                  </Link>
+                </li>
+              )}
 
-              <li className="capitalize">
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+              {isContactPage ? (
+                <li className="capitalize opacity-70 cursor-default">
                   contact us
-                </Link>
-              </li>
+                </li>
+              ) : (
+                <li className="capitalize">
+                  <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                    contact us
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         )}

@@ -8,13 +8,7 @@ const Values = () => {
   return (
     <section className="section bg-extra">
       {/* Core Values */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, delay: 0.3 }}
-        className="text-center"
-      >
+      <div className="text-center">
         <Badge Icon={Star} className="text-red-700 bg-white mb-4">
           Our Core Values
         </Badge>
@@ -44,7 +38,7 @@ const Values = () => {
             );
           })}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

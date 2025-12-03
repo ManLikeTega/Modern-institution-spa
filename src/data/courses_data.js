@@ -1,345 +1,334 @@
-import { Database, TrendingUp, BarChart3 } from "lucide-react";
+import { Section } from "lucide-react";
+import adseBrochure from "/brochures/adseBrochure.jpg";
+import acnsBrochure from "/brochures/acnsBrochure.jpeg";
 
-export const categoryData = {
-  professional: {
-    title: "Professional Courses",
+export const categoryData = [
+  {
+    id: "acns",
+    badge: "Start Your Networking Journey",
+    sectionTitle: " Learn the",
+    sectionTitleHighlight: "ACNS Essentials",
+    sectionDescription:
+      " Dive into the Aptech Certified Network Specialist program, a step-by-step course designed to equip you with essential networking skills and prepare you for a successful IT career.",
+    title: "Aptech ACNS Career Courses",
+    shortDescription:
+      "Build strong foundational IT skills and kickstart your journey into the world of technology.",
     description:
-      "Aptech offers a well structured programme that gives you a competitive edge and the right skills to succeed in modern Information Technology age. Some of our courses include: Flutter App Dev, Responsive Web Dev, Database Management, Web Development, etc.",
-    heroImage:
-      "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
-    layout: "detailed", // Different layout for professional
-    sections: [
+      "The rise of PCs and internet has increased demand for IT professionals. Aptech's ACNS is a two-year program teaching networking, security, and database management with SQL Server. Graduates can become Network Managers, Security Specialists, or Database Administrators. Network Specialists manage IT infrastructure and protect against security threats.",
+    image:
+      "https://res.cloudinary.com/ds4h5p2np/image/upload/v1681457382/Aptech%20Akowonjo/ACNS_ghnxff.jpg",
+
+    link: "/courses/acns",
+    bannerImage: "",
+    structure: [
       {
-        title: "Responsive Web Development",
+        title: "Semester One",
+        courseObjective: "Hardware Specialist",
         courses: [
-          {
-            id: 1,
-            title: "HTML5",
-            icon: "📄",
-            description:
-              "HTML5 is the latest evolution of the standard that defines HTML. The term represents two different concepts. It is a new version of the language HTML, with new elements, attributes, and behaviors, and a larger set of technologies that allows the building of more diverse and powerful Web sites and applications.",
-            features: [
-              "New Semantic Elements",
-              "Enhanced Forms",
-              "Audio & Video Support",
-              "Canvas & SVG",
-              "Web Storage",
-            ],
-          },
-          {
-            id: 2,
-            title: "CSS3",
-            icon: "🎨",
-            description:
-              "Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.",
-            features: [
-              "Flexbox & Grid",
-              "Animations",
-              "Responsive Design",
-              "Variables",
-              "Modern Layouts",
-            ],
-          },
-          {
-            id: 3,
-            title: "JavaScript",
-            icon: "⚡",
-            description:
-              "JavaScript is a lightweight, interpreted programming language. It is designed for creating network-centric applications. It is complimentary to and integrated with Java. JavaScript is very easy to implement because it is integrated with HTML. It is open and cross-platform.",
-            features: [
-              "ES6+ Features",
-              "DOM Manipulation",
-              "Async Programming",
-              "Modern Frameworks",
-              "Web APIs",
-            ],
-          },
-          {
-            id: 4,
-            title: "AngularJS/ReactJS",
-            icon: "🔄",
-            description:
-              "AngularJS and ReactJS are both popular JavaScript frameworks used for building dynamic web applications, but they have different approaches and philosophies.",
-            features: [
-              "Component-Based Architecture",
-              "State Management",
-              "Routing",
-              "API Integration",
-              "Performance Optimization",
-            ],
-          },
+          "Digital Electronics",
+          "Fundamentals of Computer Hardware and Networking",
+          "PC Configuration and Troubleshooting",
+          "and more!!!",
         ],
       },
+
       {
-        title: "Web Development",
+        title: "Semester Two",
+        courseObjective: "Network Administrator",
         courses: [
-          {
-            id: 5,
-            title: "PHP",
-            icon: "🐘",
-            description:
-              "PHP is the most popular scripting language on the web. Without PHP Facebook, Yahoo, Google wouldn't have exist. Our course is geared to make you a PHP pro. Once you digest all basics, the course will help you create your very own application.",
-            features: [
-              "Server-Side Scripting",
-              "Database Integration",
-              "MVC Architecture",
-              "Security Best Practices",
-              "RESTful APIs",
-            ],
-          },
-          {
-            id: 6,
-            title: "Python",
-            icon: "🐍",
-            description:
-              "Python is a powerful general-purpose programming language. It is used in web development, data science, creating software prototypes, and so on. Fortunately for beginners, Python has simple easy-to-use syntax. This makes Python an excellent language to learn to program for beginners.",
-            features: [
-              "Web Development",
-              "Data Science",
-              "Automation",
-              "Machine Learning",
-              "Rapid Prototyping",
-            ],
-          },
-          {
-            id: 7,
-            title: "Django",
-            icon: "🎸",
-            description:
-              "Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It's free and open source. Ridiculously fast.",
-            features: [
-              "MVT Architecture",
-              "Admin Interface",
-              "ORM",
-              "Security",
-              "Scalability",
-            ],
-          },
+          "Networking Essentials",
+          "Routing Technology",
+          "Working with Windows Operating System",
+          "and more!!",
         ],
       },
+
       {
-        title: "Microsoft Office",
+        title: "Semester Three",
+        courseObjective: "Hardware Specialist",
         courses: [
-          {
-            id: 8,
-            title: "Microsoft Office Suite",
-            icon: "📊",
-            description:
-              "Microsoft Office, or simply Office, is a family of client software, server software, and services developed by Microsoft. It was first announced by Bill Gates on August 1, 1988, at COMDEX in Las Vegas. Initially a marketing term for an office suite (bundled set of productivity applications), the first version of Office contained Microsoft Word, Microsoft Excel, and Microsoft PowerPoint.",
-            features: [
-              "Word Processing",
-              "Spreadsheets",
-              "Presentations",
-              "Data Analysis",
-              "Business Applications",
-            ],
-          },
+          "Configuring a Network Infrastructure",
+          "Windows Server Administration",
+          "Advanced Windows Server Configuration",
+          "eProject",
+        ],
+      },
+
+      {
+        title: "Semester Four",
+        courseObjective: "SQL Server - Database Manager",
+        courses: [
+          "Database Management Using SQL Server",
+          "Database Administration using SQL Server",
+          "Data Warehouse Implementation using SQL Server",
+          "eProject",
         ],
       },
     ],
-    additionalSections: [
-      {
-        title: "Programming Languages",
-        items: ["Python", "JAVA", "C#", "C++", "R Programming"],
-      },
-      {
-        title: "Web Development Using",
-        items: ["Python (Django)", "PHP"],
-      },
-      {
-        title: "Database Management",
-        items: ["MS SQL", "MONGO DB"],
-      },
-      {
-        title: "Professional Diploma Courses",
-        items: [
-          "Data Science",
-          "Artificial Intelligence and Machine Learning",
-          "Software Testing",
-          "Cross platform app dev using flutter",
-        ],
-      },
-    ],
+    brochure: acnsBrochure,
   },
-  corporate: {
-    title: "Corporate Training",
+  {
+    id: "adse",
+    badge: "Explore the ADSE Pathway",
+    sectionTitle: "Your",
+    sectionTitleHighlight: "Software Engineering Roadmap",
+    sectionDescription:
+      "Discover the full journey of the Advanced Diploma in Software Engineering, a structured, multi-level program designed to build you into a complete, industry-ready software professional.",
+    title: "Advanced Diploma in Software Engineering (ADSE)",
+    shortDescription:
+      "Master in-demand software development skills and prepare for a global tech career",
     description:
-      "Training and development involves improving the effectiveness of organizations and the individuals and teams within them. Give your team the IT skills development platform they need to level up their skills.",
-    heroImage:
+      "The Advanced Diploma in Software Engineering (ADSE) trains students in Java, .NET, Linux, Python, and other in-demand technologies. It includes modern concepts like Cloud Computing and the Internet of Things. The program prepares you to become a job-ready IT professional. Aptech partners with top international universities. Through its alliance with Middlesex University, UK, students can continue their studies at campuses in London, Dubai, Mauritius, or Malta to earn a BSc (Hons.).",
+    image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-    layout: "simple", // Different layout for corporate
-    sections: [
+    link: "/courses/adse",
+    bannerImage: "",
+    structure: [
       {
-        title: "What We Can Do For You",
+        title: "Semester One",
+        courseObjective: "CPISM",
         courses: [
-          {
-            id: 1,
-            title: "Data Management & Database Systems",
-            description:
-              "Data management courses introduce students to languages, applications and programming used for the design and maintenance of business databases. One of the basic skills covered in database management courses is the use of Structured Query Language (SQL); the most common database manipulation language, Power BI, C# and Java.",
-            features: [
-              "Structured Query Language (SQL)",
-              "Power BI for Business Intelligence",
-              "C# Programming",
-              "Java Database Connectivity",
-              "Database Design & Maintenance",
-            ],
-            icon: Database,
-          },
-          {
-            id: 2,
-            title: "Digital Marketing Professional",
-            description:
-              "Everything is getting digitalized. Companies in all sectors are focusing on developing a robust online presence. And with the demand for digital marketers outweighing the supply, there are plenty of opportunities out there for those looking to get into the field. Some of the most wanted skill sets to acquire are: Search Engine Optimization (SEO), Search Engine Marketing (SEM), Analytics: Google Analytics, Bing, Semrush, Social Media Marketing (SMM), Email Marketing and Pay Per Click (PPC).",
-            features: [
-              "Search Engine Optimization (SEO)",
-              "Search Engine Marketing (SEM)",
-              "Google Analytics & Bing Analytics",
-              "Social Media Marketing (SMM)",
-              "Email Marketing Campaigns",
-            ],
-            icon: TrendingUp,
-          },
-          {
-            id: 3,
-            title: "Advanced Excel for Business",
-            description:
-              "Advanced Excel is one of the most popular and useful data analysis tool that helps a business organization to save a lot of time and effort in data processing using the likes of Macros, Pivot Tables, Conditional statements, Data Tables, etc. These skills can be useful in various fields such as finance and accounting, marketing and product management, human resource planning, etc.",
-            features: [
-              "Excel Macros & Automation",
-              "Advanced Pivot Tables",
-              "Conditional Statements & Formulas",
-              "Data Tables & Analysis",
-              "Financial Modeling",
-            ],
-            icon: BarChart3,
-          },
+          "Programming Principles and Techniques",
+          "Logic Building and Elementary Programming",
+          "Building Next Generation Website",
+          "Responsive Web Sites using AngularJS",
+          "Data Management (SQL)",
+          "and more...",
+        ],
+      },
+
+      {
+        title: "Semester Two",
+        courseObjective: "DISM",
+        courses: [
+          "Use XML & JSON",
+          "Red Hat Linux Operating System",
+          "Fundamentals of Java",
+          "Object Oriented Programming with Java",
+          "Programming in C#",
+          "Cloud Computing",
+          "Fundamentals of IoT",
+        ],
+      },
+
+      {
+        title: "Semester 3A - JAVA",
+        courseObjective: "Java Development Track",
+        courses: [
+          "Web Component Development with Java",
+          "Integrating Applications with Spring Framework",
+          "Introduction to Dart Programming",
+          "Android App Development with Flutter",
+          "eProject",
+        ],
+      },
+
+      {
+        title: "Semester 3B - .NET",
+        courseObjective: ".NET Development Track",
+        courses: [
+          "Developing ASP.NET and MVC Web Applications",
+          "Introduction to Dart Programming",
+          "Agile and DevOps",
+          "and more...",
+        ],
+      },
+
+      {
+        title: "Semester 4A",
+        courseObjective: "OST & JAVA",
+        courses: [
+          "Working with MySQL",
+          "Programming with Python",
+          "Web Application Development using Python",
+          "eProject: Python Web Application Development",
+          "Oracle Database SQL",
+          "Programming with PL/SQL",
+          "Oracle Database Administration I",
+          "Oracle Database Administration II",
+        ],
+      },
+
+      {
+        title: "Semester 4B",
+        courseObjective: "OST & .NET",
+        courses: [
+          "Working with MySQL",
+          "Programming with Python",
+          "Web Application Development using Python",
+          "eProject: Python Web Application Development",
+          "Developing Microsoft Azure & Web Services",
+          "Creating Services for the Web",
+          "Software Engineering Principles",
+        ],
+      },
+
+      {
+        title: "Semester 4C",
+        courseObjective: "OST & ORACLE",
+        courses: [
+          "Working with MySQL",
+          "Programming with Python",
+          "Web Application Development using Python",
+          "eProject: Python Web Application Development",
+          "Oracle Database SQL",
+          "Programming with PL/SQL",
+          "Oracle Database Administration I",
+          "Oracle Database Administration II",
+        ],
+      },
+
+      {
+        title: "Semester 4D",
+        courseObjective: "OST & NETWORKING",
+        courses: [
+          "Working with MySQL",
+          "Programming with Python",
+          "Web Application Development using Python",
+          "eProject: Python Web Application Development",
+          "Azure Fundamentals",
+          "Implementing, Managing, and Monitoring Azure Environment",
+          "Azure Architect Technologies",
+          "Azure Architect Designs",
+        ],
+      },
+
+      {
+        title: "Semester 4E",
+        courseObjective: "SQL Server - Database Manager",
+        courses: [
+          "Programming with Python",
+          "Large Data Management with MongoDB",
+          "Emerging Job Areas (SMAC)",
+          "R Programming",
+          "Foundation of Big Data Systems",
+          "Processing Big Data (Hadoop, MapReduce, Hive, Pig Latin)",
+          "Visual Analytics with Tableau",
+          "Web and Social Media Analytics (Google Analytics, SAS)",
+          "Project - Big Data",
+        ],
+      },
+
+      {
+        title: "Semester 4F",
+        courseObjective: "AI & Machine Learning",
+        courses: [
+          "Programming with Python",
+          "Large Data Management with MongoDB",
+          "Emerging Job Areas (SMAC)",
+          "R Programming",
+          "AI Primer (ML, DL, Neural Networks)",
+          "Natural Language Processing Toolkits",
+          "Machine Learning",
+          "Deep Learning & ML APIs",
+          "Project - Chatbot & Recommendation Engine",
+        ],
+      },
+
+      {
+        title: "Semester 4G",
+        courseObjective: "IoT",
+        courses: [
+          "Programming with Python",
+          "Large Data Management with MongoDB",
+          "Emerging Job Areas (SMAC)",
+          "IoT Hardware",
+          "IoT Networking",
+          "Programming the IoT with Python",
+          "Project - IoT",
         ],
       },
     ],
+    brochure: adseBrochure,
   },
-  career: {
-    title: "Career Courses",
+  {
+    id: "professional",
+    badge: "Advance Your Skills",
+    sectionTitle: "Unlock Your",
+    sectionTitleHighlight: "Professional Potential",
+    sectionDescription:
+      "The Smart Professional Courses are designed to sharpen your IT expertise and make you industry-ready, with programs tailored to meet modern job requirements.",
+    title: "Aptech Smart Proffessional Courses",
+    shortDescription:
+      "Upgrade your expertise with industry-focused programs designed to make you job-ready.",
     description:
       "Complete career transformation programs designed to take you from beginner to job-ready professional.",
-    heroImage:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
-    layout: "detailed", // Changed to match professional layout
-    sections: [
+    image:
+      "https://res.cloudinary.com/ds4h5p2np/image/upload/v1681458342/Aptech%20Akowonjo/Smart-Pro_rlujav.jpg",
+    link: "/courses/professional",
+    bannerImage: "",
+    structure: [
       {
-        title: "Software Development Career Tracks",
-        courses: [
-          {
-            id: 1,
-            title: "Full Stack Web Development",
-            icon: "🌐",
-            description:
-              "Complete full-stack development program covering frontend, backend, and deployment. Become job-ready with hands-on projects and modern technologies.",
-            features: [
-              "HTML5/CSS3/JavaScript",
-              "React & Node.js",
-              "Database Design & Management",
-              "RESTful APIs & Microservices",
-              "DevOps & Deployment",
-            ],
-            duration: "24 weeks",
-            students: "62 students",
-            level: "Beginner to Advanced",
-            rating: 4.9,
-          },
-          {
-            id: 2,
-            title: "Software Engineering Career Track",
-            icon: "💻",
-            description:
-              "Comprehensive software engineering program with focus on industry best practices, system design, and real-world project experience.",
-            features: [
-              "Java & Python Programming",
-              "System Design & Architecture",
-              "Agile Methodology & Scrum",
-              "Testing & Quality Assurance",
-              "Technical Interview Preparation",
-            ],
-            duration: "36 weeks",
-            students: "55 students",
-            level: "Beginner to Advanced",
-            rating: 4.9,
-          },
-        ],
+        title: "Web Application with Python",
+        image:
+          "https://res.cloudinary.com/madflows/image/upload/v1650974740/python_rkfsge.jpg",
+        description:
+          "Learn full-stack web development using Python frameworks like Django, and more.",
       },
+
       {
-        title: "Specialized Career Programs",
-        courses: [
-          {
-            id: 3,
-            title: "Data Science Career Program",
-            icon: "📊",
-            description:
-              "Master data science from fundamentals to advanced machine learning. Build a portfolio of real-world data projects.",
-            features: [
-              "Python for Data Science",
-              "Machine Learning & AI",
-              "Data Visualization",
-              "Statistical Analysis",
-              "Big Data Technologies",
-            ],
-            duration: "28 weeks",
-            students: "48 students",
-            level: "Intermediate to Advanced",
-            rating: 4.8,
-          },
-          {
-            id: 4,
-            title: "Mobile App Development",
-            icon: "📱",
-            description:
-              "Learn to build cross-platform mobile applications using Flutter and React Native. Create professional apps for iOS and Android.",
-            features: [
-              "Flutter & Dart",
-              "React Native",
-              "Mobile UI/UX Design",
-              "API Integration",
-              "App Store Deployment",
-            ],
-            duration: "20 weeks",
-            students: "71 students",
-            level: "Beginner to Intermediate",
-            rating: 4.7,
-          },
-        ],
+        title: "Smart Professional .NET",
+        image:
+          "https://res.cloudinary.com/madflows/image/upload/v1650974722/net_b1ezka.jpg",
+        description:
+          "Learn full-stack web development using the .NET framework and related technologies.",
       },
-    ],
-    additionalSections: [
+
       {
-        title: "Career Support Services",
-        items: [
-          "1-on-1 Career Coaching",
-          "Resume & Portfolio Review",
-          "Technical Interview Preparation",
-          "Job Placement Assistance",
-          "Industry Networking Events",
-        ],
+        title: "Smart Professional Java",
+        image:
+          "https://res.cloudinary.com/madflows/image/upload/v1650974715/java_qkoynv.png",
+        description:
+          "Learn to build applications using Java programming, frameworks, tools, and more.",
       },
+
       {
-        title: "Program Features",
-        items: [
-          "Hands-on Project Experience",
-          "Mentorship from Industry Experts",
-          "Flexible Learning Schedule",
-          "Certificate of Completion",
-          "Lifetime Career Support",
-        ],
+        title: "Android App Development",
+        image:
+          "https://res.cloudinary.com/madflows/image/upload/v1650974679/android_x1xhve.jpg",
+        description:
+          "Learn to build Android applications using Java programming, frameworks, and mobile tools.",
       },
+
       {
-        title: "Career Outcomes",
-        items: [
-          "Full-Stack Developer",
-          "Software Engineer",
-          "Data Scientist",
-          "Mobile App Developer",
-          "DevOps Engineer",
-        ],
+        title: "Ethical Hacking",
+        image:
+          "https://res.cloudinary.com/madflows/image/upload/v1650974693/etical_azhrpy.jpg",
+        description:
+          "Understand ethical hacking, penetration testing, cybersecurity tools, and more.",
+      },
+
+      {
+        title: "Digital Marketing",
+        image:
+          "https://res.cloudinary.com/madflows/image/upload/v1650974689/d_nfhhwx.png",
+        description:
+          "Understand the world of digital marketing, content marketing, SEO, SEM, and more.",
+      },
+
+      {
+        title: "Smart Professional SQL DBA",
+        image:
+          "https://res.cloudinary.com/madflows/image/upload/v1650974748/sql_erqjup.jpg",
+        description:
+          "Understand the world of databases, SQL server management, optimization, and more.",
+      },
+
+      {
+        title: "Smart Professional Flutter",
+        image:
+          "https://res.cloudinary.com/madflows/image/upload/v1651072348/flutter_bes8rp.png",
+        description:
+          "Build mobile applications for Android and iOS using the Flutter framework.",
+      },
+
+      {
+        title: "Smart Professional PHP",
+        image:
+          "https://res.cloudinary.com/madflows/image/upload/v1651072352/php_wdogpq.png",
+        description:
+          "Learn full-stack web development using PHP frameworks like Laravel and more.",
       },
     ],
   },
-};
+];

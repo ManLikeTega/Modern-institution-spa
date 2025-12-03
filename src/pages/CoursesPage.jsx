@@ -1,13 +1,10 @@
-import { categoryData } from "../data/courses_data"; // Adjust import path
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
-import CoursesCategory from "../sections/CoursesCategory";
+import CoursesCategory from "../sections/course/CoursesCategory";
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import FAQ from "../sections/FAQ";
-
-import bannerImage from "../assets/courses_banner.jpg";
 
 function CoursesPage() {
   return (
@@ -37,7 +34,7 @@ function CoursesPage() {
           </motion.p>
         </div>
       </Banner>
-      <CoursesCategory categoryData={categoryData} />
+      <CoursesCategory />
       <FAQ />
       <Footer />
     </>

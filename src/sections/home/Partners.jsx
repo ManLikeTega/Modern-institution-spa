@@ -37,7 +37,7 @@ const Partners = ({ bg = "bg-extra" }) => {
           <MotionElement
             delay={index * 0.2}
             key={index + 1}
-            className="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-red-200 hover:-translate-y-2"
+            className="group flex flex-col items-center justify-center px-6 py-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-red-200 hover:-translate-y-2"
           >
             <div className="w-32 h-32 flex items-center justify-center mb-4">
               <img

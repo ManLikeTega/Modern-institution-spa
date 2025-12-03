@@ -13,7 +13,7 @@ function FAQ({ bg = "bg-extra", bg_tab = "bg-bacground" }) {
 
   return (
     <>
-      <section className={`section ${bg}`} id="faq">
+      <section className={`section ${bg}`}>
         <div className="text-center mb-10">
           <Badge
             Icon={HelpCircle}
@@ -25,7 +25,7 @@ function FAQ({ bg = "bg-extra", bg_tab = "bg-bacground" }) {
           </Badge>
 
           <MotionElement delay={0.2}>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="section_title">
               Got Questions?{" "}
               <span className="text-red-700">We've Got Answers</span>
             </h2>

@@ -7,7 +7,6 @@ import MotionElement from "../../components/MotionElement.jsx";
 function Services() {
   return (
     <section className="section bg-extra">
-      {/* Header */}
       <div className="text-center mb-10 md:mb-16">
         <Badge Icon={BookOpen} className="bg-white text-red-700">
           Comprehensive Services

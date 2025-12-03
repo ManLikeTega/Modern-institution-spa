@@ -20,13 +20,16 @@ const WhyChooseUs = () => {
       </div>
 
       <div className="max-w-4xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <MotionElement
+          delay={0.2}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <MotionElement
-                delay={index * 0.1}
-                className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              <div
+                key={index}
+                className="flex items-center gap-4 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center shrink-0">
                   <IconComponent className="w-6 h-6 text-red-600" />
@@ -34,10 +37,10 @@ const WhyChooseUs = () => {
                 <span className="text-lg font-semibold text-gray-900">
                   {feature.title}
                 </span>
-              </MotionElement>
+              </div>
             );
           })}
-        </div>
+        </MotionElement>
       </div>
 
       <MotionElement delay={0.6} className="text-center mt-12">

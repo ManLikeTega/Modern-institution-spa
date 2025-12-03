@@ -80,7 +80,7 @@ function Progress() {
                 key={index}
                 className="text-center group"
               >
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
                   {/* Icon */}
                   <div className="flex justify-center mb-4">
                     <div
