@@ -91,16 +91,16 @@ function Footer() {
             <h3 className="footer_header">Open Hours</h3>
 
             <ul>
-              <li className="flex items-center gap-2">
-                <Clock className="w-4 h-4 " />
+              <li className="flex gap-2">
+                <Clock className="mt-1.5 w-4 h-4 " />
                 <div>
                   <p>Mon - Friday</p>
                   <p>9:00 AM - 6:00 PM</p>
                 </div>
               </li>
 
-              <li className="flex items-center gap-2">
-                <Clock className="w-4 h-4 " />
+              <li className="flex gap-2">
+                <Clock className="mt-1.5 w-4 h-4 " />
                 <div>
                   <p>Sat & Sun</p>
                   <p>09:00 AM - 12:00 PM</p>
