@@ -1,6 +1,7 @@
 import { Section } from "lucide-react";
-import adseBrochure from "/brochures/adseBrochure.jpg";
 import acnsBrochure from "/brochures/acnsBrochure.jpeg";
+import adseBrochure from "/brochures/adseBrochure.jpg";
+import smartProBrochure from "/brochures/smartProBrochure.jpg";
 
 export const categoryData = [
   {
@@ -330,5 +331,6 @@ export const categoryData = [
           "Learn full-stack web development using PHP frameworks like Laravel and more.",
       },
     ],
+    brochure: smartProBrochure,
   },
 ];

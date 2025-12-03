@@ -5,6 +5,7 @@ import MotionElement from "../components/MotionElement";
 import Direction from "../sections/contact/Direction";
 import FAQ from "../sections/FAQ";
 import GetInTouch from "../sections/contact/GetInTouch";
+import Ads from "../sections/contact/Ads";
 
 function ContactPage() {
   return (
@@ -23,6 +24,7 @@ function ContactPage() {
           </MotionElement>
         </div>
       </Banner>
+      <Ads />
       <GetInTouch />
       <Direction />
       <FAQ bg="transparent" bg_tab="bg-white" />

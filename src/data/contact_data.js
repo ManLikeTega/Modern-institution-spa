@@ -1,4 +1,4 @@
-import { MapPin, Clock, Phone, Mail } from "lucide-react";
+import { Clock, Phone, Mail } from "lucide-react";
 
 export const contactInfo = [
   {
@@ -10,7 +10,7 @@ export const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+234 906 357 1320",
+    value: "+234 813 730 9622",
     description: "Call us for immediate assistance",
   },
   {

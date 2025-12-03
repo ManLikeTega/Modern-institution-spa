@@ -16,7 +16,7 @@ export const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Courses", href: "/courses" },
-  { name: "Gallery", href: "/" },
+  { name: "Gallery", href: "/gallery" },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -58,9 +58,9 @@ export const socialLinks = [
 export const contactInfo = [
   {
     icon: Phone,
-    href: "tel:+2349063571320",
+    href: "tel:+2348137309622",
     label: "Call us at +234 906 357 1320",
-    text: "+234 906 357 1320",
+    text: "+234 813 730 9622",
     bgColor: "bg-blue-600",
     hoverBgColor: "bg-blue-700",
   },
@@ -74,7 +74,7 @@ export const contactInfo = [
   },
   {
     icon: MapPin,
-    href: "#",
+    href: "https://maps.google.com/?q=6.685577,3.219743",
     label: "Visit our location",
     text: "Fowobi, Ota, Nigeria",
     bgColor: "bg-purple-600",

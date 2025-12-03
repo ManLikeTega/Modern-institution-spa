@@ -86,18 +86,16 @@ function CourseStructure({ data }) {
               ))}
         </MotionElement>
 
-        {data.id !== "professional" && (
-          <MotionElement delay={0.2} className="flex justify-center mt-8">
-            <a
-              href={data.brochure}
-              download="ADSE_Full_Brochure.jpg"
-              className="flex gap-3 bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition duration-300 shadow-md hover:shadow-lg"
-            >
-              Download Full Brochure
-              <Download />
-            </a>
-          </MotionElement>
-        )}
+        <MotionElement delay={0.2} className="flex justify-center mt-8">
+          <a
+            href={data.brochure}
+            download="ADSE_Full_Brochure.jpg"
+            className="flex gap-3 bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition duration-300 shadow-md hover:shadow-lg"
+          >
+            Download Full Brochure
+            <Download />
+          </a>
+        </MotionElement>
       </section>
     </>
   );

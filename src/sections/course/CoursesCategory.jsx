@@ -49,7 +49,9 @@ function CoursesCategory() {
               </div>
 
               <div className="my-3 md:my-6 p-6 text-center">
-                <h3 className="font-bold text-lg mb-3">{course.title}</h3>
+                <h3 className="font-bold text-lg mb-3 group-hover:text-red-600">
+                  {course.title}
+                </h3>
 
                 <p>{course.shortDescription}</p>
               </div>
