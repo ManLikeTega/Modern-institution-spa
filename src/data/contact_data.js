@@ -20,3 +20,15 @@ export const contactInfo = [
     description: "Send us your inquiries",
   },
 ];
+
+export const location = [
+  { label: "Select Location", value: "" },
+  { label: "aptech ota, fowobi", value: "aptech_ota" },
+  { label: "aptech abeokuta", value: "aptech_abeokuta" },
+  { label: "aptech akowonjo, lagos", value: "aptech_akowonjo" },
+  { label: "aptech ikorodu", value: "aptech_ikorodu" },
+  { label: "aptech akure", value: "aptech_akure" },
+  { label: "aptech benin", value: "aptech_benin" },
+  { label: "aptech calabar", value: "aptech_calabar" },
+  { label: "aptech asaba", value: "aptech_asaba" },
+];

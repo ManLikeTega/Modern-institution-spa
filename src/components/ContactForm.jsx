@@ -2,6 +2,7 @@ import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { location } from "../data/contact_data";
 
 function ContactForm() {
   const {
@@ -136,7 +137,6 @@ function ContactForm() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-          {/* Phone */}
           <div>
             <label htmlFor="phone" className="block font-medium mb-1">
               Your Phone:
@@ -156,7 +156,6 @@ function ContactForm() {
             )}
           </div>
 
-          {/* Location */}
           <div>
             <label htmlFor="location" className="block font-medium mb-1">
               Location:
@@ -167,14 +166,11 @@ function ContactForm() {
               className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
               disabled={isSubmitting}
             >
-              <option value="">Select your location</option>
-              <option value="new_york">New York</option>
-              <option value="los_angeles">Los Angeles</option>
-              <option value="chicago">Chicago</option>
-              <option value="houston">Houston</option>
-              <option value="miami">Miami</option>
-              <option value="seattle">Seattle</option>
-              <option value="boston">Boston</option>
+              {location.map((loc, index) => (
+                <option key={index} value={loc.value} className="capitalize">
+                  {loc.label}
+                </option>
+              ))}
             </select>
             {errors.location && (
               <p className="text-red-500 text-sm mt-1">
