@@ -9,6 +9,7 @@ import { Link } from "react-router";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
+import SnowOverlay from "../../components/SnowOverlay.jsx";
 
 function Hero() {
   const stats = [
@@ -19,6 +20,7 @@ function Hero() {
 
   return (
     <section className="relative w-full overflow-hidden">
+      <SnowOverlay />
       <Swiper
         slidesPerView={1}
         loop={true}

@@ -11,7 +11,7 @@ function ContactPage() {
   return (
     <>
       <Navbar />
-      <Banner image="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-6/576747342_813969934723025_3987647657288762932_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHEMv5f4kKL-bMuVoHQ4qZOT1-bzGWcP5FPX5vMZZw_kddwmW7GmyloRfOvpFEQUdiQtl-CcpyynlBaW4IuT46Q&_nc_ohc=dihl9zOdS9EQ7kNvwEW3FqJ&_nc_oc=Admv8YQsYZVHzr9red5I37DrIcb01q7_djLITp3aLo3i3AGgPKFSBiOodTEc4WdrT1E&_nc_zt=23&_nc_ht=scontent-los2-1.xx&_nc_gid=jWbCTsVYvZ5ZmcuIk-mlZw&oh=00_AfhD4-rYgigvYhNP7TjnT7aonXjnK4nCOd6igcvkcd4q9Q&oe=69312822">
+      <Banner image="https://res.cloudinary.com/dc4ucxgji/image/upload/v1764774772/WhatsApp_Image_2025-12-03_at_15.29.52_f737247f_mbnfgn.jpg">
         <div className="relative z-10 text-white max-w-4xl px-4">
           <MotionElement delay={0.2}>
             <h2 className="text-3xl md:text-4xl font-bold mb-1">
