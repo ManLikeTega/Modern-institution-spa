@@ -14,7 +14,7 @@ function Banner({ image, position = "center", children }) {
 
   const showSnow = useMemo(() => {
     const month = new Date().getMonth();
-    return month >= 11 || month <= 1; // December, January, February
+    return month > 11 || month < 1;
   }, []);
 
   return (

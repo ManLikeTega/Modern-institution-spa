@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import SnowOverlay from "../../components/SnowOverlay.jsx";
+import { useMemo } from "react";
 
 function Hero() {
   const stats = [
@@ -18,9 +19,14 @@ function Hero() {
     { icon: Star, value: "4.9/5", label: "Rating" },
   ];
 
+  const showSnow = useMemo(() => {
+    const month = new Date().getMonth();
+    return month > 11 || month < 1;
+  }, []);
+
   return (
     <section className="relative w-full overflow-hidden">
-      <SnowOverlay />
+      {showSnow && <SnowOverlay />}
       <Swiper
         slidesPerView={1}
         loop={true}
