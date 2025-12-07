@@ -21,7 +21,7 @@ function Hero() {
 
   const showSnow = useMemo(() => {
     const month = new Date().getMonth();
-    return month > 11 || month < 1;
+    return month >= 11 || month <= 1; // December, January, February
   }, []);
 
   return (
