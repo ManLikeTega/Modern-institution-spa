@@ -40,13 +40,13 @@ const Testimonial = () => {
           slidesPerView={3}
           breakpoints={{
             0: {
-              slidesPerView: 1, // small screens (mobile)
+              slidesPerView: 1,
             },
             640: {
-              slidesPerView: 2, // tablets (optional)
+              slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 3, // desktops
+              slidesPerView: 3,
             },
           }}
           navigation={{
