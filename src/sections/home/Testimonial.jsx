@@ -49,13 +49,6 @@ const Testimonial = () => {
               slidesPerView: 3, // desktops
             },
           }}
-          pagination={{
-            clickable: true,
-            el: ".testimonial-pagination",
-            renderBullet: (index, className) => {
-              return `<span class="${className} w-3 h-3 bg-red-500 opacity-50 hover:opacity-100 transition-opacity rounded-full"></span>`;
-            },
-          }}
           navigation={{
             nextEl: ".testimonial-next",
             prevEl: ".testimonial-prev",
