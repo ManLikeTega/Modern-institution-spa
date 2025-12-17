@@ -38,6 +38,17 @@ const Testimonial = () => {
           modules={[Pagination, Autoplay, Navigation]}
           spaceBetween={20}
           slidesPerView={3}
+          breakpoints={{
+            0: {
+              slidesPerView: 1, // small screens (mobile)
+            },
+            640: {
+              slidesPerView: 2, // tablets (optional)
+            },
+            1024: {
+              slidesPerView: 3, // desktops
+            },
+          }}
           pagination={{
             clickable: true,
             el: ".testimonial-pagination",
