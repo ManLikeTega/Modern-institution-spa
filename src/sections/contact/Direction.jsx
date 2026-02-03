@@ -30,7 +30,7 @@ const Directions = () => {
         <MotionElement axis="x" delay={0.2} className="relative">
           <div className="rounded-lg overflow-hidden shadow-2xl border border-gray-200">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3328.038334892295!2d3.219743!3d6.6855769999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNDEnMDguMSJOIDPCsDEzJzExLjEiRQ!5e1!3m2!1sen!2sng!4v1764409097948!5m2!1sen!2sng"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3328.0383349378467!2d3.2171680749943494!3d6.685576993309718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNDEnMDguMSJOIDPCsDEzJzExLjEiRQ!5e1!3m2!1sen!2sng!4v1770132093589!5m2!1sen!2sng"
               width="100%"
               height="400"
               style={{ border: 0 }}
@@ -39,10 +39,10 @@ const Directions = () => {
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-80 lg:h-96"
               title="Aptech Fowobi Location"
-            />
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
 
-          {/* Map Overlay Info */}
           <MotionElement
             delay={0.6}
             className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-xl p-6 border border-gray-200"

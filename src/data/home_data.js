@@ -17,7 +17,7 @@ import Partner6 from "../assets/partners/partner_6.png";
 export const hero_slides = [
   {
     image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "https://i.pinimg.com/1200x/ca/17/c5/ca17c5b2a85258ed87670ab18ad3a90f.jpg",
     title: "Partners With Top Universities & Companies",
     description:
       "We've collaborated with over 200 leading universities and industry giants to foster groundbreaking tech innovations and drive industry-leading solutions.",
@@ -216,48 +216,43 @@ export const testimonials = [
     name: "Daniel Ayesoro",
     course: "ADSE (JAVA / NETWORKING)",
     text: "I looked for not just an institution that offered the course which I wanted but also had a reputation for indisputable excellence and intellectual development of students and Aptech fits that description.",
-    image: "images/daniel.jpg",
+    image:
+      "https://i.pinimg.com/736x/ec/38/9d/ec389dd1a5f4a8f331151e46c8a6863f.jpg",
   },
   {
     id: 2,
     name: "Elohor",
     course: "CPISM",
     text: "I looked for not just an institution that offered the course which I wanted but also had a reputation for indisputable excellence and intellectual development of students and Aptech fits that description.",
-    image: "images/elohor.jpeg",
+    image: "https://i.pinimg.com/736x/1d/c3/58/1dc358719c1d6c3ef949ff602e552c22.jpg",
   },
   {
     id: 3,
     name: "David",
     course: "ADSE (JAVA / NETWORKING)",
     text: "Highly skilled and knowledgeable teaching staff. Good infrastructure and excellent placement staff.",
-    image: "images/david.jpg",
+    image:
+      "https://i.pinimg.com/1200x/a2/09/d6/a209d6e66859493e14c59bc92e5b2e02.jpg",
   },
   {
     id: 4,
-    name: "Joshua",
-    course: "ADSE (JAVA / NETWORKING)",
-    text: "I would like to thank my faculties for helping me get an exposure in one of the most reputed I.T companies.",
-    image: "images/jubadak.jpg",
+    name: "Habeeb",
+    course: "ADSE (JAVA / JAVA)",
+    text: "Aptech Fowobi is a fun and innovative place. It has most importantly taught me that excellence is always achieved through hard work.",
+    image: "https://i.pinimg.com/1200x/9a/b4/ec/9ab4ec859a51544fd1674121f4ee9499.jpg",
   },
   {
     id: 5,
-    name: "Habeeb",
-    course: "ADSE (JAVA / JAVA)",
-    text: "Aptech Ajah is a fun and innovative place. It has most importantly taught me that excellence is always achieved through hard work.",
-    image: "images/Habeeb.jpg",
+    name: "Nike",
+    course: "ADSE (.NET / NETWORKING)",
+    text: "When I started at Aptech Fowobi, I didn't have any sort of knowledge about IT. But now I do, so I highly recommend Aptech Fowobi to anybody who wishes to go into IT.",
+    image: "https://i.pinimg.com/1200x/ff/24/0c/ff240c125fef72bb8539eb9c7b85cab6.jpg",
   },
   {
     id: 6,
-    name: "Nike",
+    name: "Stephen",
     course: "ADSE (.NET / NETWORKING)",
-    text: "When I started at Aptech Ajah, I didn't have any sort of knowledge about IT. But now I do, so I highly recommend Aptech Ajah to anybody who wishes to go into IT.",
-    image: "images/Nike.jpg",
-  },
-  {
-    id: 7,
-    name: "Stephen Swanzy",
-    course: "ADSE (.NET / NETWORKING)",
-    text: "Aptech Ajah has opened my eyes to many things relating information technology. And I have also made cool friends. Thanks to Aptech Ajah.",
-    image: "images/Swanzy.jpg",
+    text: "Aptech Fowobi has opened my eyes to many things relating information technology. And I have also made cool friends. Thanks to Aptech Fowobi.",
+    image: "https://i.pinimg.com/736x/d9/d4/1f/d9d41f6b647531ad35b7af392cf1b939.jpg",
   },
 ];
